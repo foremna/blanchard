@@ -1,4 +1,5 @@
 @import url("./libs/simplebar.css");
+@import url("./libs/swiper.min.css");
 :root {
   --white: #FFFFFF;
   --black: 0, 0, 0;
@@ -54,7 +55,7 @@ body {
 .container {
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 1570px;
+  max-width: 1630px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -68,6 +69,49 @@ body {
   .container {
     padding: 0 15px;
   }
+}
+
+.button {
+  position: relative;
+  display: block;
+  padding: 22px 35px;
+  border-radius: 50px;
+  border: none;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+
+.button--primary {
+  background-color: var(--violet);
+}
+
+.button--primary:hover {
+  -webkit-box-shadow: inset 0 0 0 3px var(--lavender-middle);
+          box-shadow: inset 0 0 0 3px var(--lavender-middle);
+}
+
+.button--primary:focus:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background-color: transparent;
+  border: 2px solid var(--lavender-middle);
+  border-radius: 50px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.button--primary:active {
+  background-color: var(--violet-middle);
+  -webkit-box-shadow: inset 0 0 0 3px var(--lavender-middle);
+          box-shadow: inset 0 0 0 3px var(--lavender-middle);
 }
 
 .search-container {
@@ -88,6 +132,7 @@ body {
 }
 
 .search-container input {
+  padding-right: 30px;
   color: rgba(255, 255, 255, 0.5);
   font-size: 18px;
   line-height: 25px;
@@ -140,7 +185,7 @@ body {
 }
 
 .header__inner {
-  padding: 37px 0;
+  padding: 30px 0;
   background-color: rgba(var(--black), 1);
 }
 
@@ -268,6 +313,13 @@ body {
   }
 }
 
+.header__nav {
+  margin-left: 180px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 @media screen and (max-width: 1440px) {
   .header__nav {
     display: none;
@@ -281,7 +333,7 @@ body {
 }
 
 .header__item:not(:last-child) {
-  margin-right: 60px;
+  margin-right: 62px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -618,10 +670,11 @@ body {
 }
 
 .kinds-of-art {
-  position: relative;
+  position: absolute;
   left: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 5;
 }
 
 @media screen and (max-width: 1440px) {
@@ -656,7 +709,7 @@ body {
 }
 
 .kinds-of-art__item:not(:last-child) {
-  margin-right: 110px;
+  margin-right: 112px;
 }
 
 .kinds-of-art__item.open-dropdown .dropdown__list {
@@ -675,7 +728,7 @@ body {
 
 .kinds-of-art__link {
   display: block;
-  padding: 23px 0;
+  padding: 20px 0;
   color: var(--white);
   font-size: 18px;
   line-height: 25px;
@@ -888,5 +941,34 @@ body {
 
 .dropdown__link--balla {
   background-image: url("../img/png/subitem20.png");
+}
+
+.hero {
+  position: relative;
+}
+
+.hero__content {
+  position: absolute;
+  top: 135px;
+  width: 600px;
+  z-index: 5;
+}
+
+.hero__headline {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 98px;
+}
+
+.hero__text {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.hero .button-wrapper {
+  margin-top: 92px;
 }
 /*# sourceMappingURL=style.css.map */
