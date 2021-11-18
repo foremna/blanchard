@@ -867,6 +867,7 @@ body {
 
 .hero {
     position: relative;
+    margin-bottom: 80px;
 
     &__content {
         position: absolute;
@@ -919,6 +920,8 @@ body {
     }
 
     @media screen and (max-width: 740px) {
+        margin-bottom: 50px;
+        
         &__content {
             top: 28px;
             left: 0;
