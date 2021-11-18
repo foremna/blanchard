@@ -96,7 +96,7 @@ body {
         padding: 0 50px;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 740px) {
         padding: 0 15px;
     }
 }
@@ -104,14 +104,23 @@ body {
 .button {
     position: relative;
     display: block;
-    padding: 22px 35px;
+    padding: 22px 15px;
+    width: 320px;
     border-radius: 50px;
     border: none;
     color: var(--white);
     font-weight: 700;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 25px;
+    text-align: center;
     transition: .3s ease all;
+
+    @media screen and (max-width: 740px) {
+        padding: 12px 15px;
+        width: 200px;
+        font-size: 12px;
+        line-height: 16px;
+    }
 
     &--primary {
         background-color: var(--violet);
@@ -193,8 +202,12 @@ body {
         padding: 30px 0;
         background-color: rgba(var(--black), 1);
 
-        @media screen and (max-width: 320px) {
-            padding: 12px 0;
+        @media screen and (max-width: 1440px) {
+            padding: 35px 0;
+        }
+
+        @media screen and (max-width: 740px) {
+            padding: 10px 0;
         }
     }
 
@@ -212,7 +225,7 @@ body {
         height: 28px;
         z-index: 15;
 
-        @media screen and (max-width: 320px) {
+        @media screen and (max-width: 740px) {
             width: 25px;
         }
 
@@ -255,7 +268,7 @@ body {
                 width: 28px;
                 transform: translateY(-50%);
 
-                @media screen and (max-width: 320px) {
+                @media screen and (max-width: 740px) {
                     top: 8px;
                     width: 16px;
                     transform: unset;
@@ -266,7 +279,7 @@ body {
                 top: 24px;
                 width: 24px;
 
-                @media screen and (max-width: 320px) {
+                @media screen and (max-width: 740px) {
                     top: 16px;
                     width: 11px;
                 }
@@ -292,7 +305,7 @@ body {
             width: 188px;
         }
 
-        @media screen and (max-width: 320px) {
+        @media screen and (max-width: 740px) {
             width: 96px;
         }
     }
@@ -476,7 +489,7 @@ body {
             }
         }
 
-        @media screen and (max-width: 320px) {
+        @media screen and (max-width: 740px) {
             &__btn {
                 width: 18px;
                 height: 24px;
@@ -532,6 +545,7 @@ body {
             .header__nav {
                 display: block;
                 margin-top: 75px;
+                margin-left: 0;
                 margin-bottom: 133px;
             }
 
@@ -862,10 +876,15 @@ body {
     }
 
     &__headline {
+        margin-bottom: 10px;
         color: var(--white);
         font-weight: 700;
         font-size: 72px;
-        line-height: 98px;
+        line-height: 90px;
+
+        br {
+            display: none;
+        }
     }
 
     &__text {
@@ -877,5 +896,56 @@ body {
 
     .button-wrapper {
         margin-top: 92px;
+    }
+
+    @media screen and (max-width: 1440px) {
+        &__content {
+            top: 110px;
+            width: 665px;
+
+            br {
+                display: block;
+            }
+        }
+
+        &__headline {
+            margin-bottom: 10px;
+            line-height: 85px;
+        }
+
+        .button-wrapper {
+            margin-top: 135px;
+        }
+    }
+
+    @media screen and (max-width: 740px) {
+        &__content {
+            top: 28px;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: unset;
+        }
+
+        &__headline {
+            margin-bottom: 10px;
+            font-size: 32px;
+            line-height: 40px;
+            text-align: center;
+
+        }
+
+        &__text {
+            padding: 0 25px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+        }
+
+        .button-wrapper {
+            margin-top: 40px;
+        }
     }
 }
