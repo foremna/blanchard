@@ -72,10 +72,19 @@ body {
 }
 
 .headline {
+  margin-bottom: 20px;
   color: var(--gray-dark);
   font-weight: 400;
   font-size: 48px;
   line-height: 65px;
+}
+
+@media screen and (max-width: 740px) {
+  .headline {
+    margin-bottom: 10px;
+    font-size: 28px;
+    line-height: 38px;
+  }
 }
 
 .button {
@@ -1054,6 +1063,29 @@ body {
   }
   .hero .button-wrapper {
     margin-top: 40px;
+  }
+}
+
+.about__wrapper {
+  width: 1080px;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__wrapper {
+    width: 100%;
+  }
+}
+
+.about__text {
+  color: var(--gray-dark);
+  font-size: 16px;
+  line-height: 32px;
+}
+
+@media screen and (max-width: 740px) {
+  .about__text {
+    font-size: 14px;
+    line-height: 28px;
   }
 }
 /*# sourceMappingURL=style.css.map */
