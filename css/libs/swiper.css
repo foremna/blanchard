@@ -1,0 +1,101 @@
+.swiper {
+  height: 695px;
+}
+
+.swiper-slide {
+  background-size: cover;
+}
+
+.swiper-slide > .swiper-slide-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent no-repeat 50% 50% /cover;
+}
+
+.swiper-slide .slide1 {
+  background-image: url("../../img/jpg/picture1.jpg");
+  transform-origin: 0 100%;
+}
+
+.swiper-slide .slide2 {
+  background-image: url("../../img/jpg/picture2.jpg");
+  transform-origin: 100% 100%;
+}
+
+.swiper-slide .slide3 {
+  background-image: url("../../img/jpg/picture3.jpg");
+  transform-origin: 100% 0;
+}
+
+.swiper-scale-effect .swiper-slide-cover {
+  animation: scaleBgSlide 20s ease-in-out infinite;
+}
+
+.swiper-scale-effect .swiper-slide.swiper-slide-active .swiper-slide-cover {
+  animation: scaleBgSlide 20s ease-in-out infinite;
+}
+
+@keyframes scaleBgSlide {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .swiper {
+    height: 665px;
+  }
+
+  .swiper-slide .slide1 {
+    background-image: url("../../img/jpg/picture1-tablet-horizont.jpg");
+  }
+
+  .swiper-slide .slide2 {
+    background-image: url("../../img/jpg/picture2-tablet-horizont.jpg");
+  }
+
+  .swiper-slide .slide3 {
+    background-image: url("../../img/jpg/picture3-tablet-horizont.jpg");
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .swiper {
+    height: 305px;
+  }
+
+  .swiper-slide .slide1 {
+    background-image: url("../../img/jpg/picture1-tablet.jpg");
+  }
+
+  .swiper-slide .slide2 {
+    background-image: url("../../img/jpg/picture2-tablet.jpg");
+  }
+
+  .swiper-slide .slide3 {
+    background-image: url("../../img/jpg/picture3-tablet.jpg");
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .swiper-slide .slide1 {
+    background-image: url("../../img/jpg/picture1-tablet.jpg");
+  }
+
+  .swiper-slide .slide2 {
+    background-image: url("../../img/jpg/picture2-tablet.jpg");
+  }
+
+  .swiper-slide .slide3 {
+    background-image: url("../../img/jpg/picture3-tablet.jpg");
+  }
+}
