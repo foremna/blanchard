@@ -71,6 +71,13 @@ body {
   }
 }
 
+.headline {
+  color: var(--gray-dark);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 65px;
+}
+
 .button {
   position: relative;
   display: block;
