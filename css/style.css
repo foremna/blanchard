@@ -1066,6 +1066,16 @@ body {
   }
 }
 
+.about {
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 740px) {
+  .about {
+    margin-bottom: 50px;
+  }
+}
+
 .about__wrapper {
   width: 1080px;
 }
