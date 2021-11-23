@@ -1,3 +1,7 @@
+.choices {
+    z-index: 10;
+}
+
 #choices--select-item-choice-1 {
     display: none;
 }
