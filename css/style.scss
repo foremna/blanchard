@@ -1184,7 +1184,9 @@ body {
 
 .gallery {
     padding: 80px 0;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-image: url("../img/jpg/bg1.jpg");
 
     &__wrapper {
@@ -1217,6 +1219,10 @@ body {
         font-weight: 600;
         font-size: 16px;
         line-height: 32px;
+
+        &--tablet {
+            display: none;
+        }
     }
 
     &__slider-inner {
@@ -1254,16 +1260,12 @@ body {
     }
 
     @media screen and (max-width: 1440px) {
-        .container {
-            margin-right: -30px;
-        }
-
         .headline {
             margin-bottom: 17px;
         }
 
         &__filter {
-            width: 29%;
+            width: 31%;
         }
 
         &__slider-inner {
@@ -1280,18 +1282,97 @@ body {
         }
 
         .counter {
-            margin: 0 20px;
+            margin: 0 17px;
         }
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 920px) {
         &__wrapper {
             flex-direction: column;
         }
-        
+
+        &__filter {
+            width: 42%;
+        }
+
+        &__slider-inner {
+            margin-bottom: 25px;
+            width: 670px;
+        }
+
+        .btn-and-counter {
+            margin-top: 50px;
+        }
+
+        &__sliders {
+            height: 600px;
+        }
+
         &__slide {
             max-width: 317px;
-            max-height: 280px;
+            max-height: 283px;
+            overflow: hidden;
+
+            img {
+                object-position: 0 -17px;
+            }
+        }
+
+        &__description {
+            display: none;
+
+            &--tablet {
+                display: block;
+            }
+        }
+    }
+
+    @media screen and (max-width: 740px) {
+        padding: 50px 0;
+
+        .headline {
+            margin-bottom: 10px;
+        }
+
+        &__filter {
+            width: 100%;
+        }
+
+        &__filter-paragraph {
+            margin-bottom: 6px;
+        }
+
+        &__slider-inner {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-top: 40px;
+            margin-bottom: 18px;
+            width: 290px;
+        }
+
+        .btn-and-counter {
+            justify-content: center;
+            margin-top: 17px;
+            margin-bottom: 0;
+        }
+
+        .counter {
+            margin: 0 15px;
+        }
+
+        &__sliders {
+            height: 370px;
+        }
+
+        &__slide {
+            max-width: 290px;
+            max-height: 367px;
+
+            img {
+                width: unset;
+                height: 100%;
+                object-position: -38px 0;
+            }
         }
     }
 }

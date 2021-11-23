@@ -12,7 +12,7 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-var gallerySwiper = new Swiper('.gallery__slider-inner', {
+const gallerySwiper = new Swiper('.gallery__slider-inner', {
   pagination: {
     el: '.counter',
     type: 'fraction',
