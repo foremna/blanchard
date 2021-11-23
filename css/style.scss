@@ -1252,4 +1252,46 @@ body {
         font-size: 16px;
         line-height: 32px;
     }
+
+    @media screen and (max-width: 1440px) {
+        .container {
+            margin-right: -30px;
+        }
+
+        .headline {
+            margin-bottom: 17px;
+        }
+
+        &__filter {
+            width: 29%;
+        }
+
+        &__slider-inner {
+            width: 600px;
+        }
+
+        &__sliders {
+            height: 600px;
+        }
+
+        &__slide {
+            max-width: 280px;
+            max-height: 280px;
+        }
+
+        .counter {
+            margin: 0 20px;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__wrapper {
+            flex-direction: column;
+        }
+        
+        &__slide {
+            max-width: 317px;
+            max-height: 280px;
+        }
+    }
 }
