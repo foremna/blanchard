@@ -1,5 +1,4 @@
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
   loop: true,
   speed: 5000,
   allowTouchMove: true,
@@ -11,4 +10,43 @@ const swiper = new Swiper('.swiper', {
   fadeEffect: {
     crossFade: true
   },
+});
+
+var gallerySwiper = new Swiper('.gallery__slider-inner', {
+  pagination: {
+    el: '.counter',
+    type: 'fraction',
+  },
+  navigation: {
+    nextEl: '.btn-arrow--next',
+    prevEl: '.btn-arrow--prev',
+  },
+  a11y: true,
+  keyboardControl: true,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  grid: {
+    rows: 1,
+  },
+  spaceBetween: 15,
+  slidersPerColumnFill: 'row',
+  breakpoints:{
+    641:{
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      grid: {
+        rows: 2,
+      },
+      spaceBetween: 30,
+    },
+
+    1441:{
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      grid: {
+        rows: 2,
+      },
+      spaceBetween: 50,
+    }
+  }
 });

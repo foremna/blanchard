@@ -160,7 +160,7 @@
 
     <main>
         <section class="hero slider">
-            <div class="swiper swiper-scale-effect">
+            <div class="swiper swiper-scale-effect" id="hero-swiper">
                 <div class="container">
                     <div class="hero__content" tabindex="0">
                         <h1 class="hero__headline">Прикоснитесь <br> к прекрасному</h1>
@@ -208,14 +208,82 @@
                 </div>
             </div>
         </section>
+
+        <section class="gallery dark">
+            <div class="container">
+                <div class="gallery__wrapper">
+                    <div class="gallery__filter">
+                        <h2 class="headline">Галерея</h2>
+                        <div class="gallery__filter-inner">
+                            <p class="gallery__filter-paragraph">Фильтр:</p>
+                            <select class="select" id="select">
+                                <option value="Живопись" selected>Живопись</option>
+                                <option value="Рисунок">Рисунок</option>
+                                <option value="Скульптура">Скульптура</option>
+                            </select>
+                        </div>
+                        
+                        <div class="gallery__description">
+                            <span>Вам предоставляется 10 бесплатных скачиваний. 
+                                Для увеличения количества скачиваний 
+                            </span>
+                            <a href="" class="link link--primary"><span>авторизуйтесь,</span></a>
+                            <span> либо воспользуйтесь лицензией. </span>
+                        </div>
+                    </div>
+                    <div class="gallery__slider-inner swiper-container">
+                        <div class="btn-and-counter">
+                            <button class="btn-arrow btn-arrow--prev btn-arrow--gray" aria-label="Слайд назад"></button>
+                            <div class="counter"></div>
+                            <button class="btn-arrow btn-arrow--next btn-arrow--gray" aria-label="Слайд вперед"></button>
+                        </div>
+
+                        <div class="gallery__sliders swiper-wrapper" id="gallery-slider">
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide1.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide2.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide3.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide4.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide5.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide6.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide7.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide8.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide9.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide10.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide11.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide12.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide13.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide14.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide15.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide16.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide17.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide18.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide19.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide20.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide21.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide22.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide23.jpg" alt="" class="gallery__image"></div>
+                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide24.jpg" alt="" class="gallery__image"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Path to simplebar -->
     <script src="js/libs/simplebar.min.js"></script>
 
+    <!-- Path to jquery -->
+	<script type="text/javascript" src="js/libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery-migrate-1.2.1.min.js"></script>
+
     <!-- Path to swiper -->
-    <script src="js/libs/swiper.min.js"></script>
-    <script src="js/swiper.js"></script>
+    <script type="text/javascript" src="js/libs/swiper.min.js"></script>
+    <script type="text/javascript" src="js/swiper.js"></script>
+
+    <!-- Path to Choices select -->
+    <script src="js/libs/choices.min.js"></script>
+
 
     <script src="js/app.js"></script>
 

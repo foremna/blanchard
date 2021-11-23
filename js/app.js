@@ -30,3 +30,9 @@ btnSearch.addEventListener('click', function () {
 searchBtnReset.addEventListener('click', function () {
     searchInput.value = ''
 })
+
+// Initialization choices select
+const element = document.querySelector('select');
+const choices = new Choices(element, {
+    searchEnabled: false,
+});
