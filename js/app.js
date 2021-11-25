@@ -32,13 +32,9 @@ searchBtnReset.addEventListener('click', function () {
 })
 
 // Initialization choices select
-const elements = document.querySelectorAll('select');
-// const choices = new Choices(element, {
-//     searchEnabled: false,
-// });
-
-for (const el of elements) {
-    const elem = new Choices(el, {
+const selects = document.querySelectorAll('select');
+for (const select of selects) {
+    const elem = new Choices(select, {
         searchEnabled: false,
     });
 }
