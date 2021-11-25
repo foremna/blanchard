@@ -2,7 +2,6 @@
 @import url("./libs/swiper.min.css");
 @import url("./libs/choices.min.css");
 @import url("./libs/choices.css");
-@import url("./libs/slick.css");
 :root {
   --white: #FFFFFF;
   --black: 0, 0, 0;
@@ -1317,6 +1316,7 @@ body {
 }
 
 .gallery {
+  margin-bottom: 80px;
   padding: 80px 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1345,19 +1345,23 @@ body {
   margin-right: 50px;
 }
 
+.gallery__filter-inner {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 .gallery__filter-paragraph {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
   color: var(--white);
   font-weight: 600;
   font-size: 16px;
   line-height: 32px;
 }
 
-.gallery__filter-inner {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+.gallery .choices:last-child {
+  display: none;
 }
 
 .gallery__description {
@@ -1390,17 +1394,88 @@ body {
   height: 760px;
 }
 
+.gallery__button-slide {
+  position: relative;
+  padding: 0;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.gallery__button-slide:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  background-color: rgba(var(--black), 0.5);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  opacity: 0;
+  z-index: 1;
+}
+
+.gallery__button-slide:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 81px;
+  height: 79px;
+  background-image: url("data:image/svg+xml,%3Csvg width='81' height='79' viewBox='0 0 81 79' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='25.1624' height='6.2906' transform='matrix(-0.72074 0.693205 0.72074 0.693205 18.1355 57.1965)' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M44.2696 65.7708C28.0411 65.7708 14.8853 52.6834 14.8853 36.5393C14.8853 20.3952 28.0411 7.30786 44.2696 7.30786C60.4981 7.30786 73.6539 20.3952 73.6539 36.5393C73.6539 52.6834 60.4981 65.7708 44.2696 65.7708ZM44.2696 73.0786C23.984 73.0786 7.53923 56.7194 7.53923 36.5393C7.53923 16.3592 23.984 0 44.2696 0C64.5552 0 81 16.3592 81 36.5393C81 56.7194 64.5552 73.0786 44.2696 73.0786Z' fill='white'/%3E%3Cpath d='M42 24L42 49L47.9954 49L47.9955 24L42 24Z' fill='white'/%3E%3Cpath d='M57.2336 34L32.2336 34L32.2336 39.9954L57.2336 39.9955L57.2336 34Z' fill='white'/%3E%3C/svg%3E%0A");
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  opacity: 0;
+  z-index: 2;
+}
+
 .gallery__slide {
+  position: relative;
   max-width: 350px;
   max-height: 350px;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
 }
 
 .gallery__slide img {
   width: 100%;
 }
 
+.gallery__slide:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(194, 131, 243, 0.4);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  opacity: 0;
+  z-index: 1;
+}
+
+.gallery__slide:hover .gallery__button-slide:before, .gallery__slide:hover .gallery__button-slide:after {
+  opacity: 1;
+}
+
+.gallery__slide:focus, .gallery__slide:focus-within {
+  border: 3px solid var(--violet-middle);
+}
+
+.gallery__slide:active {
+  border: 3px solid var(--lavender);
+}
+
+.gallery__slide:active:before {
+  opacity: 1;
+}
+
 .gallery .counter {
-  margin: 0 15px;
+  margin: 0 20px;
   width: unset;
   color: var(--white);
   font-size: 16px;
@@ -1468,6 +1543,7 @@ body {
 
 @media screen and (max-width: 740px) {
   .gallery {
+    margin-bottom: 50px;
     padding: 50px 0;
   }
   .gallery .headline {
@@ -1478,6 +1554,12 @@ body {
   }
   .gallery__filter-paragraph {
     margin-bottom: 6px;
+  }
+  .gallery .choices {
+    display: none;
+  }
+  .gallery .choices:last-child {
+    display: block;
   }
   .gallery__slider-inner {
     display: -webkit-box;
@@ -1511,8 +1593,8 @@ body {
   .gallery__slide img {
     width: unset;
     height: 100%;
-    -o-object-position: -38px 0;
-       object-position: -38px 0;
+    -o-object-position: -35px 0;
+       object-position: -35px 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

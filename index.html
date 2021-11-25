@@ -216,10 +216,16 @@
                         <h2 class="headline">Галерея</h2>
                         <div class="gallery__filter-inner">
                             <p class="gallery__filter-paragraph">Фильтр:</p>
-                            <select class="select" id="select">
+                            <select class="gallery__select select" id="gallery-select">
                                 <option value="Живопись" selected>Живопись</option>
                                 <option value="Рисунок">Рисунок</option>
                                 <option value="Скульптура">Скульптура</option>
+                            </select>
+
+                            <select class="gallery__select gallery__select--mobile select" id="gallery-select">
+                                <option value="Автор" selected>Автор</option>
+                                <option value="Направление">Направление</option>
+                                <option value="Техника">Техника</option>
                             </select>
                         </div>
                         
@@ -239,31 +245,127 @@
                             <button class="btn-arrow btn-arrow--next btn-arrow--gray" aria-label="Слайд вперед"></button>
                         </div>
 
-                        <div class="gallery__sliders swiper-wrapper" id="gallery-slider">
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide1.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide2.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide3.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide4.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide5.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide6.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide7.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide8.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide9.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide10.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide11.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide12.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide13.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide14.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide15.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide16.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide17.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide18.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide19.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide20.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide21.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide22.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide23.jpg" alt="" class="gallery__image"></div>
-                            <div class="gallery__slide swiper-slide"><img src="img/jpg/gallery-slide24.jpg" alt="" class="gallery__image"></div>
+                        <div class="gallery__sliders swiper-wrapper" id="gallery-slider" tabindex="0">
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide1.jpg" alt="Торс (розовое лицо) - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide2.jpg" alt="Супрематизм - Иван Клюн" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide3.jpg" alt="Казимир Малевич - Женщина с граблями" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide4.jpg" alt="Женщина с ведрами - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide5.jpg" alt="Уборка ржи - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide6.jpg" alt="Супрематическая композиция - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide7.jpg" alt="Плотник - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide8.jpg" alt="Крестьянин в поле - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide9.jpg" alt="Крестьяне - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide10.jpg" alt="Супрематизм. Желтое и черное - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide11.jpg" alt="1917 - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide12.jpg" alt="Девушки в поле - Казимир Малевич" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide13.jpg" alt="Портрет Пертюизе, охотника на львов - Эдуард Мане" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide14.jpg" alt="В театре - Эдуард Мане" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide15.jpg" alt="Швея Солнце - Берта Моризо" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide16.jpg" alt="В гримерной - Лаура Найт" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide17.jpg" alt="Ребенок держит поднос - Эдуард Мане" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide18.jpg" alt="Цирковой конь и жених - Лаура Найт" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide19.jpg" alt="Скульптура с цветом (темно-синий и красный) - Барбара Хепуорт" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide20.jpg" alt="Около 1936 года (скульптура) - Бен Николсон" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide21.jpg" alt="Овальная скульптура № 2 - Барбара Хепуорт" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide22.jpg" alt="Скульптура 1973 – 1974 - Менаше Кадишман" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide23.jpg" alt="Скульптура 1915 – 1916 - Жак Липшиц" class="gallery__image">
+                                </button>
+                            </div>
+                            <div class="gallery__slide swiper-slide">
+                                <button class="gallery__button-slide" aria-label="Нажмите, чтобы узнать о данном предмете живописи">
+                                    <img src="img/jpg/gallery-slide24.jpg" alt="Построенная голова № 2 - Наум Габо" class="gallery__image">
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -272,7 +374,7 @@
                             Для увеличения количества скачиваний 
                         </span>
                         <a href="" class="link link--primary"><span>авторизуйтесь,</span></a>
-                        <span> либо воспользуйтесь лицензией. </span>
+                        <span> либо воспользуйтесь лицензией.</span>
                     </div>
                 </div>
             </div>

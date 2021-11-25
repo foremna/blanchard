@@ -21,7 +21,9 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
     nextEl: '.btn-arrow--next',
     prevEl: '.btn-arrow--prev',
   },
-  a11y: true,
+  a11y: {
+    notificationClass: 'swiper-notification',
+  },
   keyboardControl: true,
   slidesPerView: 1,
   slidesPerGroup: 1,
