@@ -1,3 +1,10 @@
+/*
+--> Disclaimer: some functional it could seem stranged, 
+    but this project requires technologies Pixel Perfect, 
+    therefore some places in the code may seem bad ;(
+    This not i, this all Pixel Perfect
+*/
+
 const itemKindsOfArt = document.querySelector('.kinds-of-art__item')
 const itemsKindsOfArt = document.querySelectorAll('.kinds-of-art__item')
 const btnSearch = document.querySelector('.search__btn')
@@ -5,11 +12,11 @@ const search = document.querySelector('.search')
 const searchInput = search.querySelector('input')
 const hamburger = document.querySelector('.hamburger')
 const searchBtnReset = document.querySelector('.search__btn-reset')
-const tabletNav = document.querySelector('.tablet-nav')
+const tabconstNav = document.querySelector('.tabconst-nav')
 
 hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('active')
-    tabletNav.classList.toggle('open')
+    tabconstNav.classList.toggle('open')
 })
 
 for (const item of itemsKindsOfArt) {
@@ -44,9 +51,9 @@ for (const el of elements) {
 }
 
 // Switching painters
-const linkAuthor = document.querySelectorAll('.catalog__accordion-painter-btn')
+const linkAuthors = document.querySelectorAll('.catalog__accordion-painter-btn')
 
-linkAuthor.forEach(function (linkItemAuthor) {
+linkAuthors.forEach(function (linkItemAuthor) {
     linkItemAuthor.addEventListener('click', function (event) {
         const pathDataLinkAuthor = event.currentTarget.dataset.changeAuthor
         const tabsContent = document.querySelectorAll('.catalog__tab-content')
@@ -76,6 +83,13 @@ linkAuthor.forEach(function (linkItemAuthor) {
         setTimeout(() => {
             currentTab.classList.add('visible')
         }, 700)
+
+        for (const otherLink of linkAuthors) {
+            if (otherLink !== linkItemAuthor) {
+                otherLink.classList.remove('active')
+            }
+        }
+        linkItemAuthor.classList.add('active')
     })
 })
 
@@ -84,15 +98,28 @@ const accordionButtons = document.querySelectorAll('.catalog__accordion-btn')
 
 for (const accordionBtn of accordionButtons) {
     accordionBtn.addEventListener('click', function () {
-        let itemAccordion = accordionBtn.parentElement
+
+        const itemAccordion = accordionBtn.parentElement
 
         const openAccordion = function (btn) {
-            let content = btn.querySelector('.catalog__accordion-content')
+            const content = btn.querySelector('.catalog__accordion-content')
+            const btnsPainter = content.querySelectorAll('.catalog__accordion-painter-btn')
+
+            if (btnsPainter.length >= 9) {
+                content.style.minHeight = 290 + 'px'
+            }
+
             content.style.maxHeight = content.scrollHeight + 'px'
         }
 
         const closeAccordion = function (btn) {
-            let content = btn.querySelector('.catalog__accordion-content')
+            const content = btn.querySelector('.catalog__accordion-content')
+            const btnsPainter = content.querySelectorAll('.catalog__accordion-painter-btn')
+
+            if (btnsPainter.length >= 9) {
+                content.style.minHeight = 0
+            }
+
             content.style.maxHeight = 0
         }
 

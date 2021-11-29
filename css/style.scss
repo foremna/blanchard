@@ -83,6 +83,10 @@ input::-webkit-search-results-decoration {
     display: none;
 }
 
+button {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+}
+
 body {
     margin: 0;
     font-family: 'Open Sans', 'Arial', sans-serif;
@@ -1470,10 +1474,10 @@ body {
 
     .headline-and-tabs-buttons {
         display: flex;
-        align-items: center;
     }
 
     .tabs-buttons {
+        margin-top: 13px;
         margin-left: 40px;
     }
 
@@ -1519,7 +1523,7 @@ body {
         }
 
         &:not(:last-child) {
-            margin-right: 50px;
+            margin-right: 46px;
         }
     }
 
@@ -1554,7 +1558,7 @@ body {
     }
 
     &__tabs-body {
-        margin-top: 50px;
+        margin-top: 36px;
         opacity: 0;
         transition: .7s ease opacity;
 
@@ -1573,8 +1577,8 @@ body {
 
     &__tab {
         &-contents {
-            margin-right: 50px;
-            width: 50%;
+            margin-right: 48px;
+            width: 47%;
         }
 
         &-content {
@@ -1595,7 +1599,7 @@ body {
         }
 
         &-image {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             width: 750px;
             height: 470px;
             object-fit: cover;
@@ -1603,7 +1607,7 @@ body {
 
         &-name {
             margin: 0;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: var(--gray-dark);
             font-weight: 600;
             font-size: 24px;
@@ -1612,7 +1616,7 @@ body {
 
         &-date {
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             color: var(--gray);
             font-size: 12px;
             line-height: 16px;
@@ -1674,14 +1678,15 @@ body {
 
             &.active {
                 .catalog__accordion-content {
-                    margin: 25px 0;
-                    max-height: max-content;
+                    margin: 27px 0;
+                    max-height: 290px;
                     visibility: visible;
                     opacity: 1;
                 }
 
                 .catalog__accordion-btn {
                     color: var(--violet-middle);
+                    border-bottom: 1px solid var(--silver);
                     border-color: var(--violet-middle);
 
                     &:before {
@@ -1699,6 +1704,12 @@ body {
 
                     &:before {
                         background-color: var(--lavender);
+                    }
+                }
+
+                &+.catalog__accordion-item {
+                    .catalog__accordion-btn {
+                        border-color: var(--violet);
                     }
                 }
             }
@@ -1748,7 +1759,6 @@ body {
             text-align: start;
             border: 0;
             border-top: 1px solid var(--silver);
-            border-bottom: 1px solid var(--silver);
             background-color: transparent;
             transition: .3s ease all;
 
@@ -1775,9 +1785,13 @@ body {
 
         &-content {
             display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
             max-height: 0;
+            width: 91%;
             transition: .3s ease all;
             visibility: hidden;
+            overflow: hidden;
             opacity: 0;
         }
 
@@ -1786,7 +1800,7 @@ body {
             flex-direction: column;
 
             &:not(:last-child) {
-                margin-right: 60px;
+                margin-right: 61px;
             }
         }
 
@@ -1815,8 +1829,9 @@ body {
             }
 
             &-content {
-                width: 275px;
+                margin-top: 9px;
                 margin-left: 24px;
+                width: 275px;
             }
 
             &-title {
@@ -1843,6 +1858,7 @@ body {
         &-painter-btn {
             display: block;
             text-align: start;
+            padding: 0;
             border: none;
             background-color: transparent;
             transition: .3s ease all;
@@ -1864,6 +1880,12 @@ body {
                     background-color: var(--violet);
                     transition: .3s ease all;
                     opacity: 0;
+                }
+            }
+
+            &.active {
+                span {
+                    color: var(--violet-middle);
                 }
             }
 
@@ -1894,6 +1916,28 @@ body {
                     }
                 }
             }
+        }
+    }
+
+    @media screen and (max-width: 1440px) {
+        &__description {
+            width: 100%;
+        }
+
+        &__tab {
+            &-contents {
+                margin-right: 44px;
+                width: 48%;
+            }
+
+            &-image {
+                width: 437px;
+                height: 274px;
+            }
+        }
+
+        &__accordion {
+            width: 47%;
         }
     }
 }

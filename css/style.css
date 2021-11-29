@@ -49,6 +49,10 @@ input::-webkit-search-results-decoration {
   display: none;
 }
 
+button {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans', 'Arial', sans-serif;
@@ -1606,12 +1610,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .catalog .tabs-buttons {
+  margin-top: 13px;
   margin-left: 40px;
 }
 
@@ -1659,7 +1661,7 @@ body {
 }
 
 .catalog .tab-button:not(:last-child) {
-  margin-right: 50px;
+  margin-right: 46px;
 }
 
 .catalog .language--french {
@@ -1691,7 +1693,7 @@ body {
 }
 
 .catalog__tabs-body {
-  margin-top: 50px;
+  margin-top: 36px;
   opacity: 0;
   -webkit-transition: .7s ease opacity;
   transition: .7s ease opacity;
@@ -1712,8 +1714,8 @@ body {
 }
 
 .catalog__tab-contents {
-  margin-right: 50px;
-  width: 50%;
+  margin-right: 48px;
+  width: 47%;
 }
 
 .catalog__tab-content {
@@ -1735,7 +1737,7 @@ body {
 }
 
 .catalog__tab-image {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   width: 750px;
   height: 470px;
   -o-object-fit: cover;
@@ -1744,7 +1746,7 @@ body {
 
 .catalog__tab-name {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: var(--gray-dark);
   font-weight: 600;
   font-size: 24px;
@@ -1753,7 +1755,7 @@ body {
 
 .catalog__tab-date {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   color: var(--gray);
   font-size: 12px;
   line-height: 16px;
@@ -1816,16 +1818,15 @@ body {
 }
 
 .catalog__accordion-item.active .catalog__accordion-content {
-  margin: 25px 0;
-  max-height: -webkit-max-content;
-  max-height: -moz-max-content;
-  max-height: max-content;
+  margin: 27px 0;
+  max-height: 290px;
   visibility: visible;
   opacity: 1;
 }
 
 .catalog__accordion-item.active .catalog__accordion-btn {
   color: var(--violet-middle);
+  border-bottom: 1px solid var(--silver);
   border-color: var(--violet-middle);
 }
 
@@ -1844,6 +1845,10 @@ body {
 
 .catalog__accordion-item:hover .catalog__accordion-btn:before {
   background-color: var(--lavender);
+}
+
+.catalog__accordion-item:hover + .catalog__accordion-item .catalog__accordion-btn {
+  border-color: var(--violet);
 }
 
 .catalog__accordion-item:focus .catalog__accordion-btn span, .catalog__accordion-item:focus-within .catalog__accordion-btn span {
@@ -1883,7 +1888,6 @@ body {
   text-align: start;
   border: 0;
   border-top: 1px solid var(--silver);
-  border-bottom: 1px solid var(--silver);
   background-color: transparent;
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
@@ -1916,10 +1920,18 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   max-height: 0;
+  width: 91%;
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
   visibility: hidden;
+  overflow: hidden;
   opacity: 0;
 }
 
@@ -1934,7 +1946,7 @@ body {
 }
 
 .catalog__accordion-content-row:not(:last-child) {
-  margin-right: 60px;
+  margin-right: 61px;
 }
 
 .catalog__accordion-plug {
@@ -1968,8 +1980,9 @@ body {
 }
 
 .catalog__accordion-plug-content {
-  width: 275px;
+  margin-top: 9px;
   margin-left: 24px;
+  width: 275px;
 }
 
 .catalog__accordion-plug-title {
@@ -1995,6 +2008,7 @@ body {
 .catalog__accordion-painter-btn {
   display: block;
   text-align: start;
+  padding: 0;
   border: none;
   background-color: transparent;
   -webkit-transition: .3s ease all;
@@ -2023,6 +2037,10 @@ body {
   opacity: 0;
 }
 
+.catalog__accordion-painter-btn.active span {
+  color: var(--violet-middle);
+}
+
 .catalog__accordion-painter-btn:hover span {
   color: var(--violet);
 }
@@ -2043,5 +2061,22 @@ body {
 
 .catalog__accordion-painter-btn:active span:before {
   opacity: 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .catalog__description {
+    width: 100%;
+  }
+  .catalog__tab-contents {
+    margin-right: 44px;
+    width: 48%;
+  }
+  .catalog__tab-image {
+    width: 437px;
+    height: 274px;
+  }
+  .catalog__accordion {
+    width: 47%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
