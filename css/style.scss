@@ -95,7 +95,7 @@ body {
         padding: 0 50px;
     }
 
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 740px) {
         padding: 0 15px;
     }
 }
@@ -274,10 +274,6 @@ body {
     @media screen and (max-width: 1440px) {
         .hamburger {
             display: block;
-
-            &.active {
-                width: 19px;
-            }
         }
 
         &__logotype {
@@ -429,7 +425,11 @@ body {
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 920px) {
+        &__inner {
+            padding: 37px 0;
+        }
+
         .search {
             &__btn-reset {
                 position: relative;
@@ -489,13 +489,17 @@ body {
         }
     }
 
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 740px) {
         &__inner {
             padding: 12px 0;
         }
 
         .hamburger {
             width: 25px;
+
+            &.active {
+                width: 19px;
+            }
 
             .line {
                 &:nth-child(2) {

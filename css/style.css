@@ -64,7 +64,7 @@ body {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 740px) {
   .container {
     padding: 0 15px;
   }
@@ -334,9 +334,6 @@ body {
   .header .hamburger {
     display: block;
   }
-  .header .hamburger.active {
-    width: 19px;
-  }
   .header__logotype {
     position: absolute;
     top: 50%;
@@ -487,7 +484,10 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 920px) {
+  .header__inner {
+    padding: 37px 0;
+  }
   .header .search__btn-reset {
     position: relative;
     margin-left: 23px;
@@ -538,12 +538,15 @@ body {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 740px) {
   .header__inner {
     padding: 12px 0;
   }
   .header .hamburger {
     width: 25px;
+  }
+  .header .hamburger.active {
+    width: 19px;
   }
   .header .hamburger .line:nth-child(2) {
     top: 8px;
