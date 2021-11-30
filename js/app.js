@@ -1,8 +1,8 @@
 /*
 --> Disclaimer: some functional it could seem stranged, 
     but this project requires technologies Pixel Perfect, 
-    therefore some places in the code may seem bad ;(
-    This not i, this all Pixel Perfect
+    therefore some places in the code may seem bad..
+    This not i, this all Pixel Perfect :с
 */
 
 const itemKindsOfArt = document.querySelector('.kinds-of-art__item')
@@ -12,11 +12,11 @@ const search = document.querySelector('.search')
 const searchInput = search.querySelector('input')
 const hamburger = document.querySelector('.hamburger')
 const searchBtnReset = document.querySelector('.search__btn-reset')
-const tabconstNav = document.querySelector('.tabconst-nav')
+const tabletNav = document.querySelector('.tablet-nav')
 
 hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('active')
-    tabconstNav.classList.toggle('open')
+    tabletNav.classList.toggle('open')
 })
 
 for (const item of itemsKindsOfArt) {
@@ -154,7 +154,7 @@ tabButtons.forEach(function (tabButton) {
 
             setTimeout(() => {
                 tabItem.classList.remove('active')
-            }, 200)
+            }, 600)
 
             setTimeout(() => {
                 tabItem.classList.add('deactive')
