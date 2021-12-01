@@ -52,3 +52,18 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
     }
   }
 });
+
+let mqInitEventsSwiper = window.matchMedia('(max-width: 740px)');
+
+window.addEventListener('resize', () => {
+  if (mqInitEventsSwiper.matches) {
+    const eventsSwiper = new Swiper('.events__inner', {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+      },
+    })
+  } else {
+    swiper.destroy();
+  }
+})

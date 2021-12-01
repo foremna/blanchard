@@ -180,3 +180,14 @@ tabButtons.forEach(function (tabButton) {
         tabButton.classList.toggle('active')
     })
 })
+
+const eventSliders = document.querySelectorAll('.events__slide')
+const btnShowAllEvents = document.querySelector('#show-all-events')
+
+btnShowAllEvents.addEventListener('click', function () {
+    for (const ev of eventSliders) {
+        ev.classList.remove('hide')
+    }
+
+    this.classList.add('hide')
+})
