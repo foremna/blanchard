@@ -110,12 +110,13 @@ body {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -3px;
   width: 100%;
   height: 1px;
   opacity: 0;
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
+  z-index: 2;
 }
 
 .link:hover {
@@ -129,7 +130,7 @@ body {
   left: 50%;
   width: calc(100% + 10px);
   height: calc(100% + 3px);
-  background-color: var(--violet-middle);
+  background-color: var(--violet);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 1;
@@ -176,6 +177,29 @@ body {
 
 .link--secondary {
   font-weight: 400;
+}
+
+.link--secondary:after {
+  background-color: var(--violet);
+  opacity: 1;
+}
+
+.link--secondary:focus:before {
+  top: 60%;
+  width: calc(100% + 12px);
+  height: calc(100% + 13px);
+}
+
+.link--secondary:focus:after {
+  background-color: var(--white);
+}
+
+.link--secondary:active {
+  color: var(--gray-dark);
+}
+
+.link--secondary:active:after {
+  background-color: var(--gray-dark);
 }
 
 .button {
@@ -535,7 +559,7 @@ body {
   left: 50%;
   width: calc(100% + 10px);
   height: calc(100% + 3px);
-  background-color: var(--violet-middle);
+  background-color: var(--violet);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 1;
@@ -575,7 +599,7 @@ body {
   left: 50%;
   width: calc(100% + 10px);
   height: calc(100% + 3px);
-  background-color: var(--violet-middle);
+  background-color: var(--violet);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 1;
