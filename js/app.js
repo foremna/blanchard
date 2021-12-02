@@ -180,3 +180,64 @@ tabButtons.forEach(function (tabButton) {
         tabButton.classList.toggle('active')
     })
 })
+
+const eventSliders = document.querySelectorAll('.events__slide')
+const btnShowAllEvents = document.querySelector('#show-all-events')
+
+let mqTwoShowEvents = window.matchMedia('(max-width: 940px)')
+let mqmShowAllEvents = window.matchMedia('(max-width: 740px)')
+
+for (let i = 0; i < eventSliders.length; i++) {
+    if (i < 3) {
+        eventSliders[i].classList.remove('hide')
+    }
+}
+
+function mqShowEvents (el) {
+    if (mqTwoShowEvents.matches) {
+        for (let i = 0; i < el.length; i++) {
+            if (i > 1) {
+                el[i].classList.add('hide')
+            }
+
+            if (i < 1) {
+                el[i].classList.remove('hide')
+            }
+        }
+    } else {
+        for (let i = 0; i < el.length; i++) {
+            if (i < 3) {
+                el[i].classList.remove('hide')
+            }
+        }
+    } // TODO ADD COMMENTS FOR FUNCTIONAL
+}
+
+function showAllEvents (el) {
+    for (const ev of el) {
+        ev.classList.remove('hide')
+    }
+}
+
+window.addEventListener('resize', () => {
+    mqShowEvents(eventSliders)
+
+    if (mqmShowAllEvents.matches) {
+        showAllEvents(eventSliders)
+    }
+})
+
+window.addEventListener('load', () => {
+    mqShowEvents(eventSliders)
+
+    if (mqmShowAllEvents.matches) {
+        showAllEvents(eventSliders)
+    }
+})
+
+btnShowAllEvents.addEventListener('click', function () {
+    showAllEvents(eventSliders)
+
+    this.classList.add('hide')
+})
+
