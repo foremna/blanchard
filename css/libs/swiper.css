@@ -99,3 +99,19 @@
     background-image: url("../../img/jpg/picture3-tablet.jpg");
   }
 }
+
+.swiper-pagination-bullets {
+  bottom: -3px !important;
+}
+
+.swiper-pagination-bullet {
+  margin: 0 8px !important;
+  width: 10px;
+  height: 10px;
+  background: #CACACA;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #666666;
+}

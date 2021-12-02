@@ -55,15 +55,34 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
 
 let mqInitEventsSwiper = window.matchMedia('(max-width: 740px)');
 
+function initIfMqmSwiperCatalog () {
+  if (mqInitEventsSwiper.matches) {
+    const eventsSwiper = new Swiper('.events__inner', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      slidesPerView: 1,
+      spaceBetween: 50
+    })
+  } else {
+    swiper.destroy()
+  }
+}
+
 window.addEventListener('resize', () => {
   if (mqInitEventsSwiper.matches) {
     const eventsSwiper = new Swiper('.events__inner', {
       pagination: {
         el: '.swiper-pagination',
-        type: 'bullets',
       },
+      slidesPerView: 1,
+      spaceBetween: 50
     })
   } else {
-    swiper.destroy();
+    swiper.destroy()
   }
+})
+
+window.addEventListener('load', () => {
+  initIfMqmSwiperCatalog()
 })
