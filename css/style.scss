@@ -2644,6 +2644,7 @@ body {
 }
 
 .editions {
+    margin-bottom: 80px;
     padding: 80px 0;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2823,6 +2824,8 @@ body {
     }
 
     @media screen and (max-width: 640px) {
+        margin-bottom: 50px;
+
         &__inner {
             padding: 0;
         }
