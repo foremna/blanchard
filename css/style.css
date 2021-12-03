@@ -3217,6 +3217,9 @@ body {
 }
 
 @media screen and (max-width: 640px) {
+  .projects {
+    margin-bottom: 50px;
+  }
   .projects__text-wrapper {
     margin-bottom: 12px;
     padding-right: 0;
