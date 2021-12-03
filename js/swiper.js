@@ -70,36 +70,55 @@ function initIfMqmSwiperCatalog () {
 }
 
 window.addEventListener('resize', () => {
-  if (mqInitEventsSwiper.matches) {
-    const eventsSwiper = new Swiper('.events__inner', {
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      slidesPerView: 1,
-      spaceBetween: 50
-    })
-  } else {
-    swiper.destroy()
-  }
+  initIfMqmSwiperCatalog  
 })
 
 window.addEventListener('load', () => {
   initIfMqmSwiperCatalog()
 })
 
-const editionsSwiper = new Swiper('.editions__inner', {
-  pagination: {
-    el: '.editions__inner .counter',
-    type: 'fraction',
-  },
-  navigation: {
-    nextEl: '.editions__inner .btn-arrow--next',
-    prevEl: '.editions__inner .btn-arrow--prev',
-  },
-  a11y: {
-    notificationClass: 'swiper-notification',
-  },
-  slidesPerView: 3,
-  slidesPerGroup: 3,
-  spaceBetween: 50
+
+let mqInitEditionsSwiper = window.matchMedia('(min-width: 641px)');
+
+function initIfMqmSwiperEditions () {
+  if (mqInitEditionsSwiper.matches) {
+    const editionsSwiper = new Swiper('.editions__inner', {
+      pagination: {
+        el: '.editions__inner .counter',
+        type: 'fraction',
+      },
+      navigation: {
+        nextEl: '.editions__inner .btn-arrow--next',
+        prevEl: '.editions__inner .btn-arrow--prev',
+      },
+      a11y: {
+        notificationClass: 'swiper-notification',
+      },
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 50,
+      breakpoints:{
+        640:{
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 34,
+        },
+        1440:{
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 50,
+        }
+      }
+    })
+  } else {
+    swiper.destroy()
+  }
+}
+
+window.addEventListener('resize', () => {
+  initIfMqmSwiperEditions()
+})
+
+window.addEventListener('load', () => {
+  initIfMqmSwiperEditions()
 })

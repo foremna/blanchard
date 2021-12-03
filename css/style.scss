@@ -147,6 +147,7 @@ body {
 
     span {
         position: relative;
+        display: block;
         padding-left: 24px;
         transition: .3s ease all;
 
@@ -2707,17 +2708,31 @@ body {
         }
     }
 
+    .cross {
+        display: none;
+        padding: 0;
+        border: none;
+
+        &:before,
+        &:after {
+            content: none;
+        }
+    }
+
     &__top {
         margin-bottom: 19px;
     }
 
-    &__title-and-price {
+    &__content {
         display: flex;
         justify-content: space-between;
     }
 
-    &__title {
+    &__title-and-author {
         width: 68%;
+    }
+
+    &__title {
         margin: 0;
         font-weight: 700;
         font-size: 16px;
@@ -2731,9 +2746,213 @@ body {
         margin: 0;
         font-size: 16px;
         line-height: 22px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     .button-wrapper {
         margin-top: 14px;
+    }
+
+    @media screen and (max-width: 1440px) {
+        &__inner {
+            width: 100%;
+        }
+
+        &__filter {
+            margin-right: 18px;
+            width: 30%;
+        }
+
+        &__slide {
+            width: 290px;
+        }
+
+        &__top {
+            margin-bottom: 8px;
+        }
+
+        &__image {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        &__title-and-author {
+            width: 52%;
+        }
+    }
+
+    @media screen and (max-width: 920px) {
+        &__inner {
+            padding: 0 30px;
+        }
+
+        &__wrapper {
+            flex-direction: column;
+        }
+
+        &__filter {
+            margin-right: 0;
+            width: 100%;
+        }
+
+        &__checkboxes {
+            flex-wrap: wrap;
+            max-height: 170px;
+            margin-bottom: 27px;
+        }
+
+        .checkbox-container {
+            width: 34%;
+        }
+
+        &__sliders-wrapper {
+            width: 610px;
+            margin: 0 30px;
+        }
+
+        &__slide {
+            max-width: 290px;
+        }
+
+        .btn-and-counter {
+            margin-top: 50px;
+            margin-left: -32px;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        &__inner {
+            padding: 0;
+        }
+
+        &__filter {
+            margin-bottom: 50px;
+
+            &-inner {
+                margin-top: 3px;
+            }
+
+            &-paragraph {
+                padding: 7px 0;
+            }
+        }
+        
+        .editions__filter-paragraph {
+            &--line {
+                position: relative;
+                box-shadow: 0 1px 0 0 rgba(255, 255, 255, .5), 0 -1px 0 0 rgba(255, 255, 255, .5);
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: 10px;
+                    height: 10px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.3393 1.16934L6.16992 6.33869L1.00058 1.16934' stroke='white'/%3E%3C/svg%3E ");
+                    transform: translateY(-50%);
+                    transition: .3s ease all;
+                }
+
+                &.rotate-arrow {
+                    &:before {
+                        transform: translateY(-50%) rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        &__checkboxes {
+            flex-direction: column;
+            max-height: unset;
+            margin-bottom: 2px;
+        }
+
+        .checkbox-container {
+            margin: 0;
+            padding-bottom: 9px;
+            width: 100%;
+            box-shadow: 0 1px 0 0 rgba(255, 255, 255, .5);
+
+            &.hide {
+                display: none;
+            }
+
+            input {
+                &:checked {
+                    &~.cross {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .cross {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 13px;
+            height: 13px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml,%3Csvg width='13' height='12' viewBox='0 0 13 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z' fill='%23C283F3'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z' fill='%23C283F3'/%3E%3C/svg%3E%0A");
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+
+        .btn-and-counter {
+            display: none;
+        }
+
+        &__sliders {
+            flex-wrap: wrap;
+        }
+
+        &__slide {
+            margin-bottom: 56px;
+            width: 45%;
+
+            &:not(:nth-child(2n+2)) {
+                margin-right: 29px;
+            }
+        }
+
+        &__top {
+            margin-bottom: 3px;
+        }
+
+        &__content {
+            flex-direction: column;
+        }
+
+        &__title-and-author {
+            width: 100%;
+        }
+
+        &__title {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        &__author {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        &__price {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .button {
+            padding: 11px 20px;
+            width: 100%;
+            font-size: 12px;
+        }
     }
 }
