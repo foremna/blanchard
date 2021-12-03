@@ -241,3 +241,37 @@ btnShowAllEvents.addEventListener('click', function () {
     this.classList.add('hide')
 })
 
+//Digit of numbers
+const nums = document.querySelectorAll('.number')
+
+for (const num of nums) {
+    num.addEventListener('input', function() {
+        this.value = this.value.replace(/ /g,"");
+        this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    })
+}
+
+const editionsCheckboxes = document.querySelectorAll('.editions input[type="checkbox"]')
+const paragraphCategoryEditions = document.querySelector('.editions__filter-paragraph--category')
+
+paragraphCategoryEditions.addEventListener('click', function() {
+    this.classList.toggle('rotate-arrow')
+})
+
+for (const checkbox of editionsCheckboxes) {
+    paragraphCategoryEditions.addEventListener('click', function() {
+        if (!checkbox.checked) {
+            checkbox.parentElement.classList.toggle('hide')
+        }
+    })
+
+    if (!checkbox.checked) {
+        checkbox.parentElement.classList.toggle('hide')
+    }
+
+    checkbox.addEventListener('change', function() {
+        if (!checkbox.checked) {
+            checkbox.parentElement.classList.add('hide')
+        }
+    })
+}
