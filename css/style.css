@@ -186,7 +186,7 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding-left: 19px;
+  padding-left: 11px;
   padding-right: 10px;
   border-radius: 6px;
   -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
@@ -431,7 +431,8 @@ body {
 }
 
 .button--small {
-  padding: 8px 14px;
+  padding: 8px 20px;
+  font-size: 17px;
 }
 
 .button.hide {
@@ -2706,9 +2707,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 27px;
-  margin-bottom: 27px;
-  margin-left: 2px;
+  margin-top: 32px;
+  margin-bottom: 28px;
+  margin-left: 0;
 }
 
 .editions .counter {
@@ -2748,11 +2749,11 @@ body {
 
 .editions__filter-paragraph {
   margin: 0;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
   color: var(--white);
   font-weight: 600;
   font-size: 16px;
-  line-height: 32px;
+  line-height: 22px;
 }
 
 .editions__checkboxes {
@@ -2763,7 +2764,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 32px;
+  margin-bottom: 39px;
 }
 
 .editions__checkboxes .checkbox-container:not(:last-child) {
@@ -2771,7 +2772,7 @@ body {
 }
 
 .editions__top {
-  margin-bottom: 23px;
+  margin-bottom: 19px;
 }
 
 .editions__title-and-price {
@@ -2801,6 +2802,6 @@ body {
 }
 
 .editions .button-wrapper {
-  margin-top: 20px;
+  margin-top: 14px;
 }
 /*# sourceMappingURL=style.css.map */
