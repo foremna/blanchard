@@ -241,3 +241,13 @@ btnShowAllEvents.addEventListener('click', function () {
     this.classList.add('hide')
 })
 
+//Digit of numbers
+const nums = document.querySelectorAll('.number')
+
+for (const num of nums) {
+    num.addEventListener('input', function() {
+        this.value = this.value.replace(/ /g,"");
+        this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    })
+}
+
