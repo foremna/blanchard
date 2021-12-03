@@ -51,7 +51,7 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
       spaceBetween: 50,
     }
   }
-});
+})
 
 let mqInitEventsSwiper = window.matchMedia('(max-width: 740px)');
 
@@ -121,4 +121,30 @@ window.addEventListener('resize', () => {
 
 window.addEventListener('load', () => {
   initIfMqmSwiperEditions()
+})
+
+const projectsSwiper = new Swiper('.projects__inner', {
+  navigation: {
+    nextEl: '.projects .btn-arrow--next',
+    prevEl: '.projects .btn-arrow--prev',
+  },
+  a11y: {
+    notificationClass: 'swiper-notification',
+  },
+  keyboardControl: true,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  breakpoints:{
+    641:{
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 30,
+    },
+
+    1441:{
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 50,
+    }
+  }
 })
