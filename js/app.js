@@ -275,3 +275,11 @@ for (const checkbox of editionsCheckboxes) {
         }
     })
 }
+
+const tooltips = document.querySelectorAll('.tooltip__btn-tooltip')
+
+for (const tooltip of tooltips) {
+    let tooltipPathData = tooltip.dataset.textTooltip
+    tooltip.nextElementSibling.textContent = tooltipPathData
+    tooltip.setAttribute('aria-label', tooltipPathData)
+}
