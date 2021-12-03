@@ -3109,4 +3109,81 @@ body {
             right: 0;
         }
     }
+
+    @media screen and (max-width: 1440px) {
+        &__text-wrapper {
+            margin-bottom: 22px;
+            width: 100%;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 31px;
+        }
+
+        &__inner {
+            margin: 0 55px;
+        }
+
+        &__slide {
+            padding: 44px 50px;
+            height: 135px;
+        }
+
+        &__image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    @media screen and (max-width: 920px) {
+        &__text-wrapper {
+            margin-bottom: 36px;
+            padding-right: 11px;
+        }
+
+        &__text {
+            font-size: 16px;
+            line-height: 31px;
+        }
+
+        &__headline {
+            margin-bottom: 29px;
+        }
+
+        &__slide {
+            padding: 24px 27px;
+            height: 106px;
+        }
+
+        .link {
+            white-space: nowrap;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        &__text-wrapper {
+            margin-bottom: 12px;
+            padding-right: 0;
+        }
+
+        &__text {
+            line-height: 32px;
+        }
+
+        &__inner {
+            margin: 0 48px;
+        }
+
+        &__headline {
+            margin-bottom: 11px;
+            font-size: 18px;
+        }
+
+        &__slide {
+            padding: 19px 27px;
+            height: 65px;
+        }
+    }
 }

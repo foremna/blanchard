@@ -276,6 +276,7 @@ for (const checkbox of editionsCheckboxes) {
     })
 }
 
+// Functional tooltips
 const tooltips = document.querySelectorAll('.tooltip__btn-tooltip')
 
 for (const tooltip of tooltips) {

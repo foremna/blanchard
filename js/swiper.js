@@ -134,7 +134,6 @@ const projectsSwiper = new Swiper('.projects__inner', {
   keyboardControl: true,
   slidesPerView: 1,
   slidesPerGroup: 1,
-  spaceBetween: 15,
   breakpoints:{
     641:{
       slidesPerView: 2,
