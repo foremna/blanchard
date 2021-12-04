@@ -105,6 +105,12 @@ body {
     display: none !important;
 }
 
+@media screen and (max-width: 1440px) {
+    .ymaps-2-1-79-controls__control {
+        display: none !important;
+    }
+}
+
 .visually-hidden{
 	position: absolute;
 	width: 1px;
@@ -331,6 +337,7 @@ body {
 }
 
 .link-whatsapp {
+    position: relative;
     display: block;
     width: 40px;
     height: 40px;
@@ -338,8 +345,19 @@ body {
     background-color: #30BF39;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8749 13.7509C16.6249 13.6259 15.3124 12.8759 15.0624 12.8134C14.8124 12.6884 14.6249 12.6884 14.4374 12.9384C14.2499 13.1884 13.6874 13.8134 13.5624 13.9384C13.3749 14.1259 13.2499 14.1259 12.9999 14.0009C12.7499 13.8759 11.8749 13.5634 10.8749 12.5634C10.1249 11.8134 9.56238 10.9384 9.43738 10.6259C9.31238 10.3759 9.43738 10.1884 9.56238 10.0634C9.68738 9.93835 9.81238 9.75085 9.99988 9.62585C10.1874 9.50085 10.1874 9.37585 10.3124 9.18835C10.4374 9.00085 10.3749 8.87585 10.3124 8.68835C10.2499 8.50085 9.74988 7.18835 9.56238 6.62585C9.37488 6.06335 9.12488 6.18835 8.99988 6.12585C8.81238 6.12585 8.68738 6.06335 8.49988 6.06335C8.24988 6.06335 7.93738 6.18835 7.74988 6.37585C7.49988 6.62585 6.74988 7.25085 6.74988 8.56335C6.74988 9.87585 7.62488 11.2509 7.74988 11.3759C7.87488 11.5634 9.49988 14.4384 12.1874 15.6259C14.8749 16.8134 14.8749 16.4384 15.3749 16.4384C15.8749 16.4384 16.9999 15.8134 17.2499 15.2509C17.4999 14.6259 17.4999 14.0634 17.4374 14.0009C17.3124 14.0009 17.1249 13.9384 16.8749 13.7509ZM11.8749 20.1884C10.1249 20.1884 8.49988 19.6884 7.06238 18.7509L3.68738 19.8134L4.81238 16.5634C3.74988 15.0634 3.12488 13.2509 3.12488 11.3759C3.12488 6.50085 7.06238 2.56335 11.9374 2.56335C16.8124 2.56335 20.6874 6.50085 20.6874 11.3759C20.6874 16.2509 16.7499 20.1884 11.8749 20.1884ZM11.8749 0.813354C6.06238 0.813354 1.31238 5.56335 1.31238 11.3759C1.31238 13.3134 1.81238 15.1884 2.81238 16.8134L0.874878 22.5009L6.74988 20.6259C8.31238 21.5009 10.0624 21.9384 11.8749 21.9384C17.6874 21.9384 22.4374 17.1884 22.4374 11.3759C22.4374 5.56335 17.7499 0.813354 11.8749 0.813354Z' fill='white'/%3E%3C/svg%3E%0A");
     transition: .3s ease all;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 6px;
+        width: 30px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8749 13.7509C16.6249 13.6259 15.3124 12.8759 15.0624 12.8134C14.8124 12.6884 14.6249 12.6884 14.4374 12.9384C14.2499 13.1884 13.6874 13.8134 13.5624 13.9384C13.3749 14.1259 13.2499 14.1259 12.9999 14.0009C12.7499 13.8759 11.8749 13.5634 10.8749 12.5634C10.1249 11.8134 9.56238 10.9384 9.43738 10.6259C9.31238 10.3759 9.43738 10.1884 9.56238 10.0634C9.68738 9.93835 9.81238 9.75085 9.99988 9.62585C10.1874 9.50085 10.1874 9.37585 10.3124 9.18835C10.4374 9.00085 10.3749 8.87585 10.3124 8.68835C10.2499 8.50085 9.74988 7.18835 9.56238 6.62585C9.37488 6.06335 9.12488 6.18835 8.99988 6.12585C8.81238 6.12585 8.68738 6.06335 8.49988 6.06335C8.24988 6.06335 7.93738 6.18835 7.74988 6.37585C7.49988 6.62585 6.74988 7.25085 6.74988 8.56335C6.74988 9.87585 7.62488 11.2509 7.74988 11.3759C7.87488 11.5634 9.49988 14.4384 12.1874 15.6259C14.8749 16.8134 14.8749 16.4384 15.3749 16.4384C15.8749 16.4384 16.9999 15.8134 17.2499 15.2509C17.4999 14.6259 17.4999 14.0634 17.4374 14.0009C17.3124 14.0009 17.1249 13.9384 16.8749 13.7509ZM11.8749 20.1884C10.1249 20.1884 8.49988 19.6884 7.06238 18.7509L3.68738 19.8134L4.81238 16.5634C3.74988 15.0634 3.12488 13.2509 3.12488 11.3759C3.12488 6.50085 7.06238 2.56335 11.9374 2.56335C16.8124 2.56335 20.6874 6.50085 20.6874 11.3759C20.6874 16.2509 16.7499 20.1884 11.8749 20.1884ZM11.8749 0.813354C6.06238 0.813354 1.31238 5.56335 1.31238 11.3759C1.31238 13.3134 1.81238 15.1884 2.81238 16.8134L0.874878 22.5009L6.74988 20.6259C8.31238 21.5009 10.0624 21.9384 11.8749 21.9384C17.6874 21.9384 22.4374 17.1884 22.4374 11.3759C22.4374 5.56335 17.7499 0.813354 11.8749 0.813354Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
 
     &:hover,
     &:focus {
@@ -349,6 +367,31 @@ body {
     &:active {
         opacity: 1;
         box-shadow: 0 0 0 1px var(--violet);
+    }
+
+    @media screen and (max-width: 1440px) {
+        width: 60px;
+        height: 60px;
+
+        &:before {
+            top: 14px;
+            left: 12px;
+            width: 36px;
+            height: 36px;
+            background-size: contain;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        width: 50px;
+        height: 50px;
+
+        &:before {
+            top: 8px;
+            left: 6px;
+            width: 36px;
+            height: 29px;
+        }
     }
 }
 
@@ -381,6 +424,31 @@ body {
     &:active {
         opacity: 1;
         box-shadow: 0 0 0 1px var(--violet);
+    }
+
+    @media screen and (max-width: 1440px) {
+        width: 60px;
+        height: 60px;
+
+        &:before {
+            top: 14px;
+            left: 12px;
+            width: 36px;
+            height: 36px;
+            background-size: contain;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        width: 50px;
+        height: 50px;
+
+        &:before {
+            top: 14px;
+            left: 7px;
+            width: 30px;
+            height: 24px;
+        }
     }
 }
 
@@ -3291,7 +3359,7 @@ body {
     &__wrapper {
         position: absolute;
         left: 0;
-        width: 45%;
+        width: 39%;
         height: 700px;
         background-color: var(--white);
         box-shadow: inset 0 0 0 1px var(--silver);
@@ -3301,12 +3369,13 @@ body {
     &__content {
         position: absolute;
         padding: 120px 0;
+        width: 400px;
         z-index: 10;
     }
 
     &__adr-place {
         margin: 0;
-        margin-bottom: 15px;
+        margin-bottom: 3px;
         color: var(--gray-dark);
         font-weight: 600;
         font-size: 24px;
@@ -3320,12 +3389,12 @@ body {
     }
 
     &__form {
-        margin-top: 24px;
+        margin-top: 28px;
         margin-bottom: 38px;
     }
 
     &__form-title {
-        margin-bottom: 19px;
+        margin-bottom: 16px;
         color: var(--gray-dark);
         font-weight: 400;
         font-size: 24px;
@@ -3333,11 +3402,11 @@ body {
     }
 
     .input-container {
-        margin-bottom: 23px;
+        margin-bottom: 21px;
     }
 
     &__contact {
-        margin-bottom: 18px;
+        margin-bottom: 14px;
         color: var(--gray-dark);
         font-weight: 400;
         font-size: 24px;
@@ -3350,6 +3419,93 @@ body {
         a {
             &:not(:last-child) {
                 margin-right: 20px;
+            }
+        }
+    }
+
+    &__mobile {
+        display: none;
+    }
+
+    @media screen and (max-width: 1440px) {
+        &__wrapper {
+            width: 48%;
+        }
+
+        &__content {
+            width: 335px;
+        }
+
+        &__messengers {
+            a {
+                &:not(:last-child) {
+                    margin-right: 28px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 920px) {
+        &__wrapper {
+            width: 56%;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        margin-bottom: 30px;
+
+        .not-mob {
+            display: none;
+        }
+
+        .map {
+            display: none;
+        }
+
+        &__mobile {
+            display: block;
+        }
+
+        &__adr-place {
+            margin-bottom: 0;
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        &__adr-street {
+            font-size: 14px;
+            line-height: 19px;
+        }
+
+        &__form {
+            margin-top: 33px;
+            margin-bottom: 20px;
+        }
+
+        &__form-title {
+            margin-bottom: 17px;
+            font-size: 18px;
+        }
+
+        .input-container {
+            margin-bottom: 18px;
+        }
+
+        .button--secondary {
+            padding: 12px 35px;
+            font-size: 12px;
+        }
+
+        &__contact {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        &__messengers {
+            a {
+                &:not(:last-child) {
+                    margin-right: 21px;
+                }
             }
         }
     }

@@ -326,7 +326,6 @@ function init(){
     myMap.controls.add(geolocationControl);
 }
 
-
 // Initialization inputmask
 let inputPhone = document.querySelector("input[type='tel']");
 let im = new Inputmask("+7(999) 999-99-99");
@@ -357,3 +356,48 @@ new JustValidate('.contacts__form', {
     },
     colorWrong: '#D11616'
 });
+
+let mqForYMap = window.matchMedia('(max-width: 640px)');
+
+// Connect Yandex Maps for mobile
+if (mqForYMap.matches) {
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map("map-mobile", {
+            center: [55.75, 37.60],
+            controls: [],
+            zoom: 15
+        });
+
+        var myPlacemark = new ymaps.Placemark([55.75, 37.60], {}, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/svg/location-pin.svg',
+            iconImageSize: [20, 20],
+            iconImageOffset: [-3, -42]
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+
+        var zoomControl = new ymaps.control.ZoomControl({
+            options: {
+                size: "small",
+                position: {
+                    top: '300px',
+                    right: '5px'
+                }
+            }
+        });
+        myMap.controls.add(zoomControl);
+
+        var geolocationControl = new ymaps.control.GeolocationControl({
+            options: {
+                position: {
+                    top: '367px',
+                    right: '5px'
+                }
+            }
+        });
+
+        myMap.controls.add(geolocationControl);
+    }
+}
