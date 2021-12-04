@@ -66,12 +66,12 @@ function initIfMqmSwiperCatalog () {
       spaceBetween: 50
     })
   } else {
-    swiper.destroy()
+    swiper.destroy();
   }
 }
 
 window.addEventListener('resize', () => {
-  initIfMqmSwiperCatalog  
+  initIfMqmSwiperCatalog()
 })
 
 window.addEventListener('load', () => {
