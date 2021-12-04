@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper', {
+const heroSwiper = new Swiper('.hero__inner-sliders', {
   // Optional parameters
   loop: true,
   speed: 5000,
