@@ -284,3 +284,76 @@ for (const tooltip of tooltips) {
     tooltip.nextElementSibling.textContent = tooltipPathData
     tooltip.setAttribute('aria-label', tooltipPathData)
 }
+
+// Connect Yandex Maps
+ymaps.ready(init);
+function init(){
+    var myMap = new ymaps.Map("map", {
+        center: [55.75, 37.60],
+        controls: [],
+        zoom: 15
+    });
+
+    var myPlacemark = new ymaps.Placemark([55.75, 37.60], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: 'img/svg/location-pin.svg',
+        iconImageSize: [20, 20],
+        iconImageOffset: [-3, -42]
+    });
+
+    myMap.geoObjects.add(myPlacemark);
+
+    var zoomControl = new ymaps.control.ZoomControl({
+        options: {
+            size: "small",
+            position: {
+                top: '300px',
+                right: '5px'
+            }
+        }
+    });
+    myMap.controls.add(zoomControl);
+
+    var geolocationControl = new ymaps.control.GeolocationControl({
+        options: {
+            position: {
+                top: '367px',
+                right: '5px'
+            }
+        }
+    });
+
+    myMap.controls.add(geolocationControl);
+}
+
+
+// Initialization inputmask
+let inputPhone = document.querySelector("input[type='tel']");
+let im = new Inputmask("+7(999) 999-99-99");
+im.mask(inputPhone);
+
+// Initialization just validate
+new JustValidate('.contacts__form', {
+    rules: {
+        name: {
+            required: true,
+            minLength: 3
+        },
+        phone: {
+            required: true,
+            function: (name, value) => {
+                let numberPhone = inputPhone.inputmask.unmaskedvalue();
+
+                return Number(numberPhone) && numberPhone.length === 10;
+            }
+        },
+    },
+    messages: {
+        name: {
+            required: 'Как вас зовут?',
+            minLength: 'Минимум две буквы'
+        },
+        phone: 'Укажите ваш телефон',
+    },
+    colorWrong: '#D11616'
+});

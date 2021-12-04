@@ -1700,7 +1700,43 @@
                 </div>
             </div>
         </section>
+
+        <section class="contacts">
+            <div class="container">
+                <h2 class="headline">Контакты</h2>
+            </div>
+            <div class="contacts__wrapper"></div>
+
+            <div class="container">
+                <div class="contacts__content">
+                    <p class="contacts__adr-place">Шоурум №4</p>
+                    <span class="contacts__adr-street">Леонтьевский переулок, дом 5/1</span>
+
+                    <form action="" class="contacts__form">
+                        <h3 class="contacts__form-title">Заказать обратный звонок</h3>
+                        <label class="input-container"><input type="text" placeholder="Имя*" data-validate-field="name"></label>
+                        <label class="input-container"><input type="tel" placeholder="Телефон*" data-validate-field="phone"></label>
+                        <div class="button-wrapper">
+                            <button class="button button--secondary" type="submit"><span>Заказать</span></button>
+                        </div>
+                    </form>
+
+                    <h3 class="contacts__contact">Связаться в один клик</h3>
+                    <div class="contacts__messengers">
+                        <a class="link-whatsapp" href="https://api.whatsapp.com/send?phone=79000000000" target="_blank" title="Написать в Whatsapp" rel="noopener noreferrer"></a>
+                        <a class="link-telegram" href="https://telegram.me/randomnameeee" target="_blank" title="Написать в Telegram"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacts__map-container">
+                <div id="map" style="width: 100%; height: 700px"></div>
+            </div>
+        </section>
     </main>
+
+    <!--  Yandex Maps-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
 
     <!-- Path to simplebar -->
     <script src="js/libs/simplebar.min.js"></script>
@@ -1711,6 +1747,12 @@
 
     <!-- Path to Choices select -->
     <script src="js/libs/choices.min.js"></script>
+
+    <!-- Path to Just validate -->
+    <script src="js/libs/just-validate.min.js"></script>
+
+    <!-- Path to Inputmask -->
+    <script src="js/libs/inputmask.min.js"></script>
 
     <script src="js/app.js"></script>
 </body>
