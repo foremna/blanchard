@@ -673,6 +673,8 @@ body {
   color: var(--white);
   font-size: 18px;
   line-height: 25px;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
