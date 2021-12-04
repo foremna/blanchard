@@ -392,6 +392,28 @@ body {
             z-index: 0;
         }
     }
+
+    @media screen and (max-width: 640px) {
+        &__btn-tooltip {
+            &:active {
+                &:before {
+                    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z' fill='%239D5CD0'/%3E%3Cpath d='M10.9102 4.49268L11.9545 5.53702L5.20523 12.2863L4.16089 11.2419L10.9102 4.49268Z' fill='white'/%3E%3Cpath d='M11.793 11.0811L10.7486 12.1254L3.99936 5.37613L5.04371 4.33179L11.793 11.0811Z' fill='white'/%3E%3C/svg%3E%0A");
+                }
+            }
+        }
+
+        &__content {
+            max-width: 220px;
+            right: -25px;
+            left: unset;
+            background-color: var(--silver);
+            transform: unset;
+
+            &:before {
+                content: none;
+            }
+        }
+    }
 }
 
 .button-wrapper {
