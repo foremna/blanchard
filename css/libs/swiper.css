@@ -16,17 +16,17 @@
 }
 
 .swiper-slide .slide1 {
-  background-image: url("../../img/jpg/picture1.jpg");
+  background-image: url("../../img/jpg/picture1.webp");
   transform-origin: 0 100%;
 }
 
 .swiper-slide .slide2 {
-  background-image: url("../../img/jpg/picture2.jpg");
+  background-image: url("../../img/jpg/picture2.webp");
   transform-origin: 100% 100%;
 }
 
 .swiper-slide .slide3 {
-  background-image: url("../../img/jpg/picture3.jpg");
+  background-image: url("../../img/jpg/picture3.webp");
   transform-origin: 100% 0;
 }
 
@@ -56,15 +56,15 @@
   }
 
   .swiper-slide .slide1 {
-    background-image: url("../../img/jpg/picture1-tablet-horizont.jpg");
+    background-image: url("../../img/jpg/picture1-tablet-horizont.webp");
   }
 
   .swiper-slide .slide2 {
-    background-image: url("../../img/jpg/picture2-tablet-horizont.jpg");
+    background-image: url("../../img/jpg/picture2-tablet-horizont.webp");
   }
 
   .swiper-slide .slide3 {
-    background-image: url("../../img/jpg/picture3-tablet-horizont.jpg");
+    background-image: url("../../img/jpg/picture3-tablet-horizont.webp");
   }
 }
 
@@ -74,29 +74,29 @@
   }
 
   .swiper-slide .slide1 {
-    background-image: url("../../img/jpg/picture1-tablet.jpg");
+    background-image: url("../../img/jpg/picture1-tablet.webp");
   }
 
   .swiper-slide .slide2 {
-    background-image: url("../../img/jpg/picture2-tablet.jpg");
+    background-image: url("../../img/jpg/picture2-tablet.webp");
   }
 
   .swiper-slide .slide3 {
-    background-image: url("../../img/jpg/picture3-tablet.jpg");
+    background-image: url("../../img/jpg/picture3-tablet.webp");
   }
 }
 
 @media screen and (max-width: 576px) {
   .swiper-slide .slide1 {
-    background-image: url("../../img/jpg/picture1-tablet.jpg");
+    background-image: url("../../img/jpg/picture1-tablet.webp");
   }
 
   .swiper-slide .slide2 {
-    background-image: url("../../img/jpg/picture2-tablet.jpg");
+    background-image: url("../../img/jpg/picture2-tablet.webp");
   }
 
   .swiper-slide .slide3 {
-    background-image: url("../../img/jpg/picture3-tablet.jpg");
+    background-image: url("../../img/jpg/picture3-tablet.webp");
   }
 }
 

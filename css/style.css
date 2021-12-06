@@ -1791,7 +1791,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../img/jpg/bg1.jpg");
+  background-image: url("../img/jpg/bg1.webp");
 }
 
 .gallery__wrapper {
@@ -2974,7 +2974,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../img/jpg/bg2.jpg");
+  background-image: url("../img/jpg/bg2.webp");
 }
 
 .editions__inner {
