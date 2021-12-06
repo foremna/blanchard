@@ -2,9 +2,9 @@ const heroSwiper = new Swiper('.hero__inner-sliders', {
   loop: true,
   speed: 5000,
   allowTouchMove: true,
-  autoplay: {
-    delay: 3000,
-  },
+  // autoplay: {
+  //   delay: 3000,
+  // },
 
   effect: 'fade',
   fadeEffect: {
