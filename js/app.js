@@ -5,8 +5,8 @@
     This not i, this all Pixel Perfect :с
 */
 
-const itemKindsOfArt = document.querySelector('.kinds-of-art__item')
-const itemsKindsOfArt = document.querySelectorAll('.kinds-of-art__item')
+const itemKindsOfArt = document.querySelector('.header-arts__item')
+const itemsKindsOfArt = document.querySelectorAll('.header-arts__item')
 const btnSearch = document.querySelector('.search__btn')
 const search = document.querySelector('.search')
 const searchInput = search.querySelector('input')
