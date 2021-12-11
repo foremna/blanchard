@@ -165,7 +165,7 @@ body {
 	line-height: 65px;
 
 	@media screen and (max-width: 740px) {
-		margin-bottom: 10px;
+		margin-bottom: 11px;
 		font-size: 28px;
 		line-height: 38px;
 	}
@@ -280,6 +280,12 @@ body {
 
 		&:active {
 			background-color: var(--violet-middle);
+		}
+	}
+
+	@media screen and (max-width: 740px) {
+		input {
+			padding: 4px 10px;
 		}
 	}
 }
@@ -509,6 +515,7 @@ body {
 
 		&:active {
 			&+.tooltip__content {
+				visibility: visible;
 				opacity: 1;
 			}
 
@@ -534,6 +541,7 @@ body {
 		transform: translateX(-50%);
 		box-sizing: border-box;
 		transition: .3s ease opacity;
+		visibility: hidden;
 		opacity: 0;
 		z-index: 3;
 
@@ -549,6 +557,27 @@ body {
 			border-top: 9px solid var(--violet);
 			transform: translateX(-50%);
 			z-index: 0;
+		}
+	}
+
+	@media screen and (max-width: 1440px) {
+		&__btn-tooltip {
+			&:active {
+				&:before {
+					background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z' fill='%239D5CD0'/%3E%3Cpath d='M10.9102 4.49268L11.9545 5.53702L5.20523 12.2863L4.16089 11.2419L10.9102 4.49268Z' fill='white'/%3E%3Cpath d='M11.793 11.0811L10.7486 12.1254L3.99936 5.37613L5.04371 4.33179L11.793 11.0811Z' fill='white'/%3E%3C/svg%3E%0A");
+				}
+			}
+		}
+
+		&__content {
+			max-width: 240px;
+			right: -25px;
+			left: unset;
+			transform: unset;
+
+			&:before {
+				content: none;
+			}
 		}
 	}
 
@@ -1240,7 +1269,7 @@ body {
 
 	@media screen and (max-width: 740px) {
 		&__top {
-			padding: 12px 0;
+			padding: 9px 0;
 		}
 
 		.hamburger {
@@ -1251,15 +1280,21 @@ body {
 			}
 
 			.line {
+				height: 2px;
+
+				&:first-child {
+					top: 4px;
+				}
+
 				&:nth-child(2) {
-					top: 8px;
+					top: 12px;
 					width: 16px;
 					transform: unset;
 				}
 
 				&:last-child {
-					top: 16px;
-					width: 11px;
+					top: 20px;
+					width: 10px;
 				}
 			}
 		}
@@ -1722,19 +1757,19 @@ body {
 		margin-bottom: 50px;
 
 		&__inner-sliders {
-			min-height: 305px;
+			min-height: 309px;
 		}
 
 		&__content {
-			top: 28px;
-			left: 0;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			padding-top: 31px;
 			width: unset;
 		}
 
 		&__headline {
+			width: 260px;
 			margin-bottom: 10px;
 			font-size: 32px;
 			line-height: 40px;
@@ -1743,7 +1778,7 @@ body {
 		}
 
 		&__text {
-			padding: 0 25px;
+			padding: 0 10px;
 			font-weight: 400;
 			font-size: 12px;
 			line-height: 16px;
@@ -1779,24 +1814,26 @@ body {
 .about {
 	margin-bottom: 70px;
 
-	@media screen and (max-width: 740px) {
-		margin-bottom: 50px;
-	}
-
 	&__wrapper {
 		width: 1080px;
-
-		@media screen and (max-width: 1440px) {
-			width: 100%;
-		}
 	}
 
 	&__text {
 		color: var(--gray-dark);
 		font-size: 16px;
 		line-height: 32px;
+	}
 
-		@media screen and (max-width: 740px) {
+	@media screen and (max-width: 1440px) {
+		&__wrapper {
+			width: 100%;
+		}
+	}
+
+	@media screen and (max-width: 740px) {
+		margin-bottom: 42px;
+
+		&__text {
 			font-size: 14px;
 			line-height: 28px;
 		}
@@ -1873,6 +1910,7 @@ body {
 	&__button-slide {
 		position: relative;
 		padding: 0;
+		width: 100%;
 		height: 100%;
 		border: none;
 		background-color: transparent;
@@ -2032,7 +2070,7 @@ body {
 
 	@media screen and (max-width: 740px) {
 		margin-bottom: 50px;
-		padding: 50px 0;
+		padding: 50px 0 41px;
 
 		.headline {
 			margin-bottom: 10px;
@@ -2650,7 +2688,7 @@ body {
 		}
 	}
 
-	@media screen and (max-width: 940px) {
+	@media screen and (max-width: 920px) {
 		margin-bottom: 70px;
 
 		.tabs-buttons {
@@ -2740,7 +2778,9 @@ body {
 		}
 	}
 
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 740px) {
+		margin-bottom: 51px;
+
 		.headline-and-tabs-buttons {
 			flex-direction: column;
 		}
@@ -2772,16 +2812,31 @@ body {
 
 		&__tab {
 			&-contents {
-				width: 99%;
+				width: 100%;
 			}
 
 			&-image {
-				margin-bottom: 17px;
+				margin-bottom: 15px;
 				height: 181px;
+			}
+
+			&-name {
+				margin-bottom: 14px;
+			}
+
+			&-date {
+				margin-bottom: 6px;
+			}
+
+			&-text {
+				display: block;
+				padding-right: 3px;
 			}
 		}
 
 		&__accordion {
+			margin-bottom: 50px;
+
 			&-item {
 				&.active {
 					.catalog__accordion-content {
@@ -2799,7 +2854,7 @@ body {
 				&:before {
 					width: 30px;
 					height: 30px;
-					background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 6L6 0.999996L0.999999 6' stroke='black'/%3E%3C/svg%3E%0A");
+					background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L6 6L0.999999 1' stroke='black'/%3E%3C/svg%3E%0A");
 				}
 			}
 
@@ -2950,7 +3005,7 @@ body {
 			padding: 14px 14px 50px;
 
 			&-wrapper {
-				padding: 0 20px;
+				padding: 0 5px 0 22px;
 			}
 		}
 
@@ -2960,6 +3015,7 @@ body {
 
 		&__description {
 			margin-bottom: 23px;
+			padding-right: 12px;
 		}
 
 		.button-wrapper {
@@ -3004,6 +3060,8 @@ body {
 	}
 
 	@media screen and (max-width: 740px) {
+		margin-bottom: 47px;
+
 		&__inner {
 			position: relative;
 			padding-bottom: 33px;
@@ -3034,10 +3092,20 @@ body {
 
 		&__content {
 			padding: 14px 6px 50px;
+
+			&-wrapper {
+				padding: 0 5px 0 22px;
+			}
+		}
+
+		&__title {
+			flex-grow: 1;
+			line-height: 34px;
 		}
 
 		&__description {
-			margin-bottom: 25px;
+			margin-bottom: 24px;
+			padding-right: 20px;
 		}
 
 		.button-wrapper {
@@ -3235,8 +3303,9 @@ body {
 		}
 	}
 
-	@media screen and (max-width: 640px) {
-		margin-bottom: 50px;
+	@media screen and (max-width: 740px) {
+		margin-bottom: 48px;
+    padding: 50px 0 0;
 
 		&__inner {
 			padding: 0;
@@ -3246,36 +3315,39 @@ body {
 			margin-bottom: 50px;
 
 			&-inner {
-				margin-top: 3px;
+				margin-top: 2px;
 			}
 
 			&-paragraph {
-				padding: 7px 0;
-			}
-		}
+				margin-bottom: 4px;
+				padding: 3px 0;
 
-		.editions__filter-paragraph {
-			&--line {
-				position: relative;
-				box-shadow: 0 1px 0 0 rgba(255, 255, 255, .5), 0 -1px 0 0 rgba(255, 255, 255, .5);
-
-				&:before {
-					content: '';
-					position: absolute;
-					top: 50%;
-					right: 0;
-					width: 10px;
-					height: 10px;
-					background-repeat: no-repeat;
-					background-size: contain;
-					background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.3393 1.16934L6.16992 6.33869L1.00058 1.16934' stroke='white'/%3E%3C/svg%3E ");
-					transform: translateY(-50%);
-					transition: .3s ease transform;
+				&--category {
+					margin-bottom: 9px;
 				}
 
-				&.rotate-arrow {
+				&--line {
+					position: relative;
+					box-shadow: 0 1px 0 0 rgba(255, 255, 255, .5), 0 -1px 0 0 rgba(255, 255, 255, .5);
+	
 					&:before {
-						transform: translateY(-50%) rotate(180deg);
+						content: '';
+						position: absolute;
+						top: 50%;
+						right: 0;
+						width: 10px;
+						height: 10px;
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.3393 1.16934L6.16992 6.33869L1.00058 1.16934' stroke='white'/%3E%3C/svg%3E ");
+						transform: translateY(-50%);
+						transition: .3s ease transform;
+					}
+	
+					&.rotate-arrow {
+						&:before {
+							transform: translateY(-50%) rotate(180deg);
+						}
 					}
 				}
 			}
@@ -3284,12 +3356,12 @@ body {
 		&__checkboxes {
 			flex-direction: column;
 			max-height: unset;
-			margin-bottom: 2px;
+			margin-bottom: 6px;
 		}
 
 		.checkbox-container {
 			margin: 0;
-			padding-bottom: 9px;
+			padding-bottom: 8px;
 			width: 100%;
 			box-shadow: 0 1px 0 0 rgba(255, 255, 255, .5);
 
@@ -3329,7 +3401,7 @@ body {
 		}
 
 		&__slide {
-			margin-bottom: 56px;
+			margin-bottom: 51px;
 			width: 45%;
 
 			&:not(:nth-child(2n+2)) {
@@ -3476,7 +3548,7 @@ body {
 
 	@media screen and (max-width: 920px) {
 		margin-bottom: 80px;
-		
+
 		&__text-wrapper {
 			margin-bottom: 26px;
 			padding-right: 11px;
@@ -3624,7 +3696,7 @@ body {
 		}
 	}
 
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 740px) {
 		margin-bottom: 30px;
 
 		.not-mob {
@@ -3642,7 +3714,7 @@ body {
 		&__adr-place {
 			margin-bottom: 0;
 			font-size: 18px;
-			line-height: 25px;
+			line-height: 22px;
 		}
 
 		&__adr-street {
