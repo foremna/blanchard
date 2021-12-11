@@ -1,17 +1,4 @@
-// const heroSwiper = new Swiper('.hero__inner-sliders', {
-//   loop: true,
-//   speed: 5000,
-//   allowTouchMove: true,
-//   // autoplay: {
-//   //   delay: 3000,
-//   // },
-
-//   effect: 'fade',
-//   fadeEffect: {
-//     crossFade: true
-//   },
-// });
-
+// Gallery swiper slider
 const gallerySwiper = new Swiper('.gallery__slider-inner', {
   pagination: {
     el: '.counter',
@@ -53,36 +40,48 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
   }
 })
 
-let mqInitEventsSwiper = window.matchMedia('(max-width: 740px)');
+// Events swiper slider
+const eventsInner = document.querySelector('.events__inner')
 
-function initIfMqmSwiperCatalog () {
-  if (mqInitEventsSwiper.matches) {
-    const eventsSwiper = new Swiper('.events__inner', {
+let eventsSwiper;
+
+function sliderCatalog () {
+  if (window.innerWidth <= 740 && eventsInner.dataset.mobile == 'false') {
+    eventsSwiper = new Swiper(eventsInner, {
       pagination: {
         el: '.swiper-pagination',
       },
       slidesPerView: 1,
       spaceBetween: 50
     })
-  } else {
-    swiper.destroy();
+
+		eventsInner.dataset.mobile = 'true'
+  }
+
+	if (window.innerWidth > 740) {
+    eventsInner.dataset.mobile = 'false'
+    if (eventsInner.classList.contains('swiper-container-initialized')) {
+      eventsSwiper.destroy()
+    }
   }
 }
 
 window.addEventListener('resize', () => {
-  initIfMqmSwiperCatalog()
+  sliderCatalog()
 })
 
 window.addEventListener('load', () => {
-  initIfMqmSwiperCatalog()
+  sliderCatalog()
 })
 
+// Editions swiper slider
+const editionsInner = document.querySelector('.editions__inner')
 
-let mqInitEditionsSwiper = window.matchMedia('(min-width: 641px)');
+let editionsSwiper;
 
-function initIfMqmSwiperEditions () {
-  if (mqInitEditionsSwiper.matches) {
-    const editionsSwiper = new Swiper('.editions__inner', {
+function sliderEditions () {
+  if (window.innerWidth >= 740 && editionsInner.dataset.mobile == 'false') {
+    editionsSwiper = new Swiper(editionsInner, {
       pagination: {
         el: '.editions__inner .counter',
         type: 'fraction',
@@ -115,19 +114,25 @@ function initIfMqmSwiperEditions () {
         }
       }
     })
-  } else {
-    swiper.destroy()
+  }
+
+	if (window.innerWidth < 740) {
+    editionsInner.dataset.mobile = 'false'
+    if (editionsInner.classList.contains('swiper-container-initialized')) {
+      editionsSwiper.destroy()
+    }
   }
 }
 
 window.addEventListener('resize', () => {
-  initIfMqmSwiperEditions()
+  sliderEditions()
 })
 
 window.addEventListener('load', () => {
-  initIfMqmSwiperEditions()
+  sliderEditions()
 })
 
+// Projects slider
 const projectsSwiper = new Swiper('.projects__inner', {
   navigation: {
     nextEl: '.projects .btn-arrow--next',

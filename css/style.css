@@ -1359,7 +1359,7 @@ body {
     height: 100px;
     left: -50px;
     background-color: rgba(var(--black), 1);
-    z-index: 15;
+    z-index: 9999;
   }
   .header .search.active .search__btn {
     background-color: transparent;

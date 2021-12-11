@@ -30,11 +30,13 @@ for (const item of itemsKindsOfArt) {
 	})
 }
 
-btnSearch.addEventListener('click', function () {
+btnSearch.addEventListener('click', function (e) {
+	e.preventDefault()
 	search.classList.toggle('active')
 })
 
-searchBtnReset.addEventListener('click', function () {
+searchBtnReset.addEventListener('click', function (e) {
+	e.preventDefault()
 	searchInput.value = ''
 })
 
@@ -421,4 +423,4 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
 			behavior: 'smooth'
 		});
 	});
-});
+})
