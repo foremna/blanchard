@@ -101,6 +101,11 @@ function initIfMqmSwiperEditions () {
         640:{
           slidesPerView: 2,
           slidesPerGroup: 2,
+          spaceBetween: 37,
+        },
+        920:{
+          slidesPerView: 2,
+          slidesPerGroup: 2,
           spaceBetween: 50,
         },
         1440:{
