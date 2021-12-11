@@ -5,8 +5,7 @@
     This not i, this all Pixel Perfect :с
 */
 
-const itemKindsOfArt = document.querySelector('.header-arts__item')
-const itemsKindsOfArt = document.querySelectorAll('.header-arts__item')
+const itemsArts = document.querySelectorAll('.header-arts__item')
 const btnSearch = document.querySelector('.search__btn')
 const search = document.querySelector('.search')
 const searchInput = search.querySelector('input')
@@ -14,14 +13,16 @@ const hamburger = document.querySelector('.hamburger')
 const searchBtnReset = document.querySelector('.search__btn-reset')
 const tabletNav = document.querySelector('.tablet-nav')
 
+// Open & close hamburger
 hamburger.addEventListener('click', function () {
 	hamburger.classList.toggle('active')
 	tabletNav.classList.toggle('open')
 })
 
-for (const item of itemsKindsOfArt) {
+// Open & close dropdown arts
+for (const item of itemsArts) {
 	item.addEventListener('click', function () {
-		for (const otherItem of itemsKindsOfArt) {
+		for (const otherItem of itemsArts) {
 			if (otherItem !== item) {
 				otherItem.classList.remove('open-dropdown')
 			}
@@ -30,11 +31,13 @@ for (const item of itemsKindsOfArt) {
 	})
 }
 
+// Open & close search
 btnSearch.addEventListener('click', function (e) {
 	e.preventDefault()
 	search.classList.toggle('active')
 })
 
+// Cleaning search input
 searchBtnReset.addEventListener('click', function (e) {
 	e.preventDefault()
 	searchInput.value = ''
@@ -183,6 +186,7 @@ tabButtons.forEach(function (tabButton) {
 	})
 })
 
+// Show & hide all events whichever media quaries or click btn show all events
 const eventSliders = document.querySelectorAll('.events__slide')
 const btnShowAllEvents = document.querySelector('#show-all-events')
 
@@ -212,12 +216,13 @@ function mqShowEvents(el) {
 				el[i].classList.remove('hide')
 			}
 		}
-	} // TODO ADD COMMENTS FOR FUNCTIONAL
+	}
 }
 
+// Removes class hide from the element argument
 function showAllEvents(el) {
-	for (const ev of el) {
-		ev.classList.remove('hide')
+	for (const item of el) {
+		item.classList.remove('hide')
 	}
 }
 
@@ -237,6 +242,7 @@ window.addEventListener('load', () => {
 	}
 })
 
+// Show all events, then hide btn
 btnShowAllEvents.addEventListener('click', function () {
 	showAllEvents(eventSliders)
 
@@ -253,6 +259,7 @@ for (const num of nums) {
 	})
 }
 
+// Show checked checkboxes, hided unchecked, and add interactive paragraph
 const editionsCheckboxes = document.querySelectorAll('.editions input[type="checkbox"]')
 const paragraphCategoryEditions = document.querySelector('.editions__filter-paragraph--category')
 
@@ -358,11 +365,11 @@ new JustValidate('.contacts__form', {
 		phone: 'Укажите ваш телефон',
 	},
 	colorWrong: '#D11616'
-});
-
-let mqForYMap = window.matchMedia('(max-width: 640px)');
+})
 
 // Connect Yandex Maps for mobile
+let mqForYMap = window.matchMedia('(max-width: 640px)');
+
 if (mqForYMap.matches) {
 	ymaps.ready(init);
 
@@ -406,6 +413,7 @@ if (mqForYMap.matches) {
 	}
 }
 
+// Smooth transition to link with id
 document.querySelectorAll('a[href^="#"').forEach(link => {
 	link.addEventListener('click', function (e) {
 		e.preventDefault();
