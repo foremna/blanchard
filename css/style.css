@@ -296,7 +296,7 @@ body {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -3px;
+  bottom: 2px;
   width: 100%;
   height: 1px;
   opacity: 0;
@@ -2627,7 +2627,7 @@ body {
 .catalog__accordion-painter-btn span:before {
   content: '';
   position: absolute;
-  bottom: -3px;
+  bottom: 2px;
   width: 100%;
   height: 1px;
   background-color: var(--violet);
@@ -2918,8 +2918,8 @@ body {
           flex-direction: column;
   margin-bottom: 47px;
   height: unset;
-  -ms-flex-preferred-size: 31.3%;
-      flex-basis: 31.3%;
+  -ms-flex-preferred-size: 31.2%;
+      flex-basis: 31.2%;
   -webkit-box-shadow: inset 0 0 0 1px var(--silver);
           box-shadow: inset 0 0 0 1px var(--silver);
   -webkit-transition: .3s ease margin, .3s height, .3s ease opacity, .3s ease visibility;
