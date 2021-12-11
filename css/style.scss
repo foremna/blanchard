@@ -1661,14 +1661,11 @@ body {
 
 	&__text {
 		margin: 0;
+		margin-bottom: 92px;
 		color: var(--white);
 		font-weight: 700;
 		font-size: 18px;
 		line-height: 30px;
-	}
-
-	.button-wrapper {
-		margin-top: 92px;
 	}
 
 	&__slide {
@@ -1728,8 +1725,8 @@ body {
 			line-height: 84px;
 		}
 
-		.button-wrapper {
-			margin-top: 135px;
+		&__text {
+			margin-bottom: 135px;
 		}
 
 		&__slide {
@@ -1778,15 +1775,12 @@ body {
 		}
 
 		&__text {
+			margin-bottom: 40px;
 			padding: 0 10px;
 			font-weight: 400;
 			font-size: 12px;
 			line-height: 16px;
 			text-align: center;
-		}
-
-		.button-wrapper {
-			margin-top: 40px;
 		}
 
 		&__slide {
@@ -3198,6 +3192,7 @@ body {
 	&__content {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 14px;
 	}
 
 	&__title-and-author {
@@ -3221,10 +3216,6 @@ body {
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
-	}
-
-	.button-wrapper {
-		margin-top: 14px;
 	}
 
 	@media screen and (max-width: 1440px) {

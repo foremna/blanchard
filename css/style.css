@@ -1765,14 +1765,11 @@ body {
 
 .hero__text {
   margin: 0;
+  margin-bottom: 92px;
   color: var(--white);
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
-}
-
-.hero .button-wrapper {
-  margin-top: 92px;
 }
 
 .hero__slide {
@@ -1825,8 +1822,8 @@ body {
     margin-bottom: 10px;
     line-height: 84px;
   }
-  .hero .button-wrapper {
-    margin-top: 135px;
+  .hero__text {
+    margin-bottom: 135px;
   }
   .hero__slide--slide1 div {
     background-image: url("../img/jpg/picture1-tablet-horizont.webp");
@@ -1868,14 +1865,12 @@ body {
     text-align: center;
   }
   .hero__text {
+    margin-bottom: 40px;
     padding: 0 10px;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
     text-align: center;
-  }
-  .hero .button-wrapper {
-    margin-top: 40px;
   }
   .hero__slide--slide1 div {
     background-image: url("../img/jpg/picture1-tablet.webp");
@@ -3250,6 +3245,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 14px;
 }
 
 .editions__title-and-author {
@@ -3273,10 +3269,6 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-
-.editions .button-wrapper {
-  margin-top: 14px;
 }
 
 @media screen and (max-width: 1440px) {
