@@ -1,16 +1,16 @@
-const heroSwiper = new Swiper('.hero__inner-sliders', {
-  loop: true,
-  speed: 5000,
-  allowTouchMove: true,
-  // autoplay: {
-  //   delay: 3000,
-  // },
+// const heroSwiper = new Swiper('.hero__inner-sliders', {
+//   loop: true,
+//   speed: 5000,
+//   allowTouchMove: true,
+//   // autoplay: {
+//   //   delay: 3000,
+//   // },
 
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true
-  },
-});
+//   effect: 'fade',
+//   fadeEffect: {
+//     crossFade: true
+//   },
+// });
 
 const gallerySwiper = new Swiper('.gallery__slider-inner', {
   pagination: {
@@ -101,7 +101,7 @@ function initIfMqmSwiperEditions () {
         640:{
           slidesPerView: 2,
           slidesPerGroup: 2,
-          spaceBetween: 34,
+          spaceBetween: 50,
         },
         1440:{
           slidesPerView: 3,
@@ -135,12 +135,16 @@ const projectsSwiper = new Swiper('.projects__inner', {
   slidesPerView: 1,
   slidesPerGroup: 1,
   breakpoints:{
-    641:{
+    640:{
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 30,
     },
-
+    920:{
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 50,
+    },
     1441:{
       slidesPerView: 3,
       slidesPerGroup: 3,
