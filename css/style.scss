@@ -1,11 +1,12 @@
 @import url("./libs/simplebar.css");
+@import url("./libs/swiper.css");
 @import url("./libs/swiper.min.css");
 @import url("./libs/choices.min.css");
 @import url("./libs/choices.css");
 
 // KEYFRAMES
 
-@keyframes slideanim {
+@keyframes sliderFade {
 	16.6% {
 		opacity: 1;
 		transform: scale(1.2);
@@ -1639,6 +1640,38 @@ body {
 .hero {
 	position: relative;
 	margin-bottom: 80px;
+	background-image: url(../img/jpg/picture1.webp);
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+
+	&.bg-slider {
+		.hero__slide {
+			div {
+				animation: sliderFade 30s infinite;
+			}
+
+			&--slide1 {
+				div {
+					animation-delay: 0s;
+				}
+				
+			}
+	
+			&--slide2 {
+				div {
+					animation-delay: 10s;
+				}
+				
+			}
+	
+			&--slide3 {
+				div {
+					animation-delay: 20s;
+				}
+			}
+		}
+	}
 
 	&__inner-sliders {
 		min-height: 699px;
@@ -1682,29 +1715,23 @@ body {
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
 			opacity: 0;
-			animation: slideanim 30s infinite;
 		}
 
 		&--slide1 {
 			div {
 				background-image: url(../img/jpg/picture1.webp);
-				animation-delay: 0s;
 			}
-			
 		}
 
 		&--slide2 {
 			div {
 				background-image: url(../img/jpg/picture2.webp);
-				animation-delay: 10s;
 			}
-			
 		}
 
 		&--slide3 {
 			div {
 				background-image: url(../img/jpg/picture3.webp);
-				animation-delay: 20s;
 			}
 		}
 	}
