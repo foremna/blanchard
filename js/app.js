@@ -43,6 +43,13 @@ searchBtnReset.addEventListener('click', function (e) {
 	searchInput.value = ''
 })
 
+// Activation slider hero after load layout
+const hero = document.querySelector('.hero')
+
+window.addEventListener('load', () => {
+	hero.classList.add('bg-slider')
+})
+
 // Initialization choices select
 const selects = document.querySelectorAll('select');
 for (const select of selects) {
@@ -294,47 +301,119 @@ for (const tooltip of tooltips) {
 	tooltip.setAttribute('aria-label', tooltipPathData)
 }
 
-// Connect Yandex Maps
-ymaps.ready(init);
+// Connect Yandex Maps for Tablet and up & lazy load YMaps
+let flagForDesktopYMaps = false
+function initYMapAtScroll () {
+	let scrollY = window.scrollY
+	let map = document.querySelector('.map')
+	let {top} = map.getBoundingClientRect()
 
-function init() {
-	var myMap = new ymaps.Map("map", {
-		center: [55.75, 37.60],
-		controls: [],
-		zoom: 15
-	});
+	if (scrollY >= top - 500 && !flagForDesktopYMaps) {
+		ymaps.ready(init);
 
-	var myPlacemark = new ymaps.Placemark([55.75, 37.60], {}, {
-		iconLayout: 'default#image',
-		iconImageHref: 'img/svg/location-pin.svg',
-		iconImageSize: [20, 20],
-		iconImageOffset: [-3, -42]
-	});
-
-	myMap.geoObjects.add(myPlacemark);
-
-	var zoomControl = new ymaps.control.ZoomControl({
-		options: {
-			size: "small",
-			position: {
-				top: '300px',
-				right: '5px'
-			}
+		function init() {
+			var myMap = new ymaps.Map("map", {
+				center: [55.75, 37.60],
+				controls: [],
+				zoom: 15
+			});
+		
+			var myPlacemark = new ymaps.Placemark([55.75, 37.60], {}, {
+				iconLayout: 'default#image',
+				iconImageHref: 'img/svg/location-pin.svg',
+				iconImageSize: [20, 20],
+				iconImageOffset: [-3, -42]
+			});
+		
+			myMap.geoObjects.add(myPlacemark);
+		
+			var zoomControl = new ymaps.control.ZoomControl({
+				options: {
+					size: "small",
+					position: {
+						top: '300px',
+						right: '5px'
+					}
+				}
+			});
+			myMap.controls.add(zoomControl);
+		
+			var geolocationControl = new ymaps.control.GeolocationControl({
+				options: {
+					position: {
+						top: '367px',
+						right: '5px'
+					}
+				}
+			});
+		
+			myMap.controls.add(geolocationControl);
 		}
-	});
-	myMap.controls.add(zoomControl);
-
-	var geolocationControl = new ymaps.control.GeolocationControl({
-		options: {
-			position: {
-				top: '367px',
-				right: '5px'
-			}
-		}
-	});
-
-	myMap.controls.add(geolocationControl);
+		flagForDesktopYMaps = true
+	}
 }
+
+window.addEventListener('scroll', function () {
+	initYMapAtScroll()
+})
+
+// Connect Yandex Maps for mobile & lazy load YMaps
+let mqForYMap = window.matchMedia('(max-width: 640px)')
+let flagForMobileYMaps = false
+
+function initYMapMobileAtScroll () {
+	let scrollY = window.scrollY
+	let map = document.querySelector('.map-mobile')
+	let {top} = map.getBoundingClientRect()
+
+	if (scrollY >= top - 500 && !flagForMobileYMaps && mqForYMap.matches) {
+		ymaps.ready(init);
+
+		function init() {
+			var myMap = new ymaps.Map("map-mobile", {
+				center: [55.75, 37.60],
+				controls: [],
+				zoom: 15
+			});
+
+			var myPlacemark = new ymaps.Placemark([55.75, 37.60], {}, {
+				iconLayout: 'default#image',
+				iconImageHref: 'img/svg/location-pin.svg',
+				iconImageSize: [20, 20],
+				iconImageOffset: [-3, -42]
+			});
+
+			myMap.geoObjects.add(myPlacemark);
+
+			var zoomControl = new ymaps.control.ZoomControl({
+				options: {
+					size: "small",
+					position: {
+						top: '300px',
+						right: '5px'
+					}
+				}
+			});
+			myMap.controls.add(zoomControl);
+
+			var geolocationControl = new ymaps.control.GeolocationControl({
+				options: {
+					position: {
+						top: '367px',
+						right: '5px'
+					}
+				}
+			});
+
+			myMap.controls.add(geolocationControl);
+		}
+		flagForMobileYMaps = true
+	}
+}
+
+window.addEventListener('scroll', function () {
+	initYMapMobileAtScroll()
+})
 
 // Initialization inputmask
 let inputPhone = document.querySelector("input[type='tel']");
@@ -366,52 +445,6 @@ new JustValidate('.contacts__form', {
 	},
 	colorWrong: '#D11616'
 })
-
-// Connect Yandex Maps for mobile
-let mqForYMap = window.matchMedia('(max-width: 640px)');
-
-if (mqForYMap.matches) {
-	ymaps.ready(init);
-
-	function init() {
-		var myMap = new ymaps.Map("map-mobile", {
-			center: [55.75, 37.60],
-			controls: [],
-			zoom: 15
-		});
-
-		var myPlacemark = new ymaps.Placemark([55.75, 37.60], {}, {
-			iconLayout: 'default#image',
-			iconImageHref: 'img/svg/location-pin.svg',
-			iconImageSize: [20, 20],
-			iconImageOffset: [-3, -42]
-		});
-
-		myMap.geoObjects.add(myPlacemark);
-
-		var zoomControl = new ymaps.control.ZoomControl({
-			options: {
-				size: "small",
-				position: {
-					top: '300px',
-					right: '5px'
-				}
-			}
-		});
-		myMap.controls.add(zoomControl);
-
-		var geolocationControl = new ymaps.control.GeolocationControl({
-			options: {
-				position: {
-					top: '367px',
-					right: '5px'
-				}
-			}
-		});
-
-		myMap.controls.add(geolocationControl);
-	}
-}
 
 // Smooth transition to link with id
 document.querySelectorAll('a[href^="#"').forEach(link => {

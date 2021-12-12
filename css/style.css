@@ -1,8 +1,9 @@
 @import url("./libs/simplebar.css");
+@import url("./libs/swiper.css");
 @import url("./libs/swiper.min.css");
 @import url("./libs/choices.min.css");
 @import url("./libs/choices.css");
-@-webkit-keyframes slideanim {
+@-webkit-keyframes sliderFade {
   16.6% {
     opacity: 1;
     -webkit-transform: scale(1.2);
@@ -17,7 +18,7 @@
     opacity: 0;
   }
 }
-@keyframes slideanim {
+@keyframes sliderFade {
   16.6% {
     opacity: 1;
     -webkit-transform: scale(1.2);
@@ -1742,6 +1743,30 @@ body {
 .hero {
   position: relative;
   margin-bottom: 80px;
+  background-image: url(../img/jpg/picture1.webp);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.hero.bg-slider .hero__slide div {
+  -webkit-animation: sliderFade 30s infinite;
+          animation: sliderFade 30s infinite;
+}
+
+.hero.bg-slider .hero__slide--slide1 div {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.hero.bg-slider .hero__slide--slide2 div {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+
+.hero.bg-slider .hero__slide--slide3 div {
+  -webkit-animation-delay: 20s;
+          animation-delay: 20s;
 }
 
 .hero__inner-sliders {
@@ -1787,26 +1812,18 @@ body {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   opacity: 0;
-  -webkit-animation: slideanim 30s infinite;
-          animation: slideanim 30s infinite;
 }
 
 .hero__slide--slide1 div {
   background-image: url(../img/jpg/picture1.webp);
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
 }
 
 .hero__slide--slide2 div {
   background-image: url(../img/jpg/picture2.webp);
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
 }
 
 .hero__slide--slide3 div {
   background-image: url(../img/jpg/picture3.webp);
-  -webkit-animation-delay: 20s;
-          animation-delay: 20s;
 }
 
 @media screen and (max-width: 1440px) {
