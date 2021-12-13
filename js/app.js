@@ -449,19 +449,39 @@ new JustValidate('.contacts__form', {
 // Smooth transition to link with id
 document.querySelectorAll('a[href^="#"').forEach(link => {
 	link.addEventListener('click', function (e) {
-		e.preventDefault();
+		e.preventDefault()
 
-		let href = this.getAttribute('href').substring(1);
+		let href = this.getAttribute('href').substring(1)
 
-		const scrollTarget = document.getElementById(href);
+		const scrollTarget = document.getElementById(href)
 
-		const topOffset = 0;
-		const elementPosition = scrollTarget.getBoundingClientRect().top;
-		const offsetPosition = elementPosition - topOffset;
+		const topOffset = 0
+		const elementPosition = scrollTarget.getBoundingClientRect().top
+		const offsetPosition = elementPosition - topOffset
 
 		window.scrollBy({
 			top: offsetPosition,
 			behavior: 'smooth'
-		});
-	});
+		})
+	})
+})
+
+const lazyImg = document.querySelectorAll('img')
+
+function lazyLoadImg () {
+	let flag = false
+	let scrollY = window.scrollY
+
+	for (const img of lazyImg) {
+		let {top} = img.getBoundingClientRect()
+		let dataSrcLazyImg = img.dataset.src
+
+		if (scrollY >= top && !flag) {
+			img.src = dataSrcLazyImg
+		}
+	}
+}
+
+window.addEventListener('scroll', function () {
+	lazyLoadImg()
 })
