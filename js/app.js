@@ -44,11 +44,11 @@ searchBtnReset.addEventListener('click', function (e) {
 })
 
 // Activation slider hero after load layout
-// const hero = document.querySelector('.hero')
+const hero = document.querySelector('.hero')
 
-// window.addEventListener('load', () => {
-// 	hero.classList.add('bg-slider')
-// })
+window.addEventListener('load', () => {
+	hero.classList.add('bg-slider')
+})
 
 // Initialization choices select
 const selects = document.querySelectorAll('select');
