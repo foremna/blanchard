@@ -44,11 +44,11 @@ searchBtnReset.addEventListener('click', function (e) {
 })
 
 // Activation slider hero after load layout
-const hero = document.querySelector('.hero')
+// const hero = document.querySelector('.hero')
 
-window.addEventListener('load', () => {
-	hero.classList.add('bg-slider')
-})
+// window.addEventListener('load', () => {
+// 	hero.classList.add('bg-slider')
+// })
 
 // Initialization choices select
 const selects = document.querySelectorAll('select');
@@ -485,3 +485,11 @@ function lazyLoadImg () {
 window.addEventListener('scroll', function () {
 	lazyLoadImg()
 })
+
+setTimeout(function () {
+	var elem = document.createElement('script');
+	elem.type = 'text/javascript';
+	elem.src = 'https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU';
+	var div = document.querySelector('body');
+	div.after(elem);
+}, 4000);

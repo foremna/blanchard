@@ -1,3 +1,7 @@
+.hidden {
+  display: none;
+}
+
 @-webkit-keyframes sliderFade {
   16.6% {
     opacity: 1;

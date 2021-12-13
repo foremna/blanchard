@@ -1,5 +1,9 @@
 // KEYFRAMES
 
+.hidden {
+	display: none;
+}
+
 @keyframes sliderFade {
 	16.6% {
 		opacity: 1;
