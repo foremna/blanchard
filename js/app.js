@@ -505,11 +505,29 @@ document.addEventListener('scroll', function () {
 	lazyLoadImg()
 })
 
+// Replace aria-label in custom
+function swiperBtnAccessibility() {
+	const btnsPrev = document.querySelectorAll('.btn-arrow--prev')
+	const btnsNext = document.querySelectorAll('.btn-arrow--next')
+
+	btnsPrev.forEach(function (btnPrev) {
+		btnPrev.setAttribute('aria-label', 'Предыдущий слайд')
+	})
+
+	btnsNext.forEach(function (btnNext) {
+		btnNext.setAttribute('aria-label', 'Следующий слайд')
+	})
+}
+
+window.addEventListener('load', function () {
+	setTimeout(swiperBtnAccessibility(), 1000)
+})
+
 // Create api YMaps after load
 window.addEventListener('load', function () {
-	var elem = document.createElement('script')
-	elem.type = 'text/javascript'
-	elem.src = 'https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU'
-	var div = document.querySelector('footer')
-	div.after(elem)
+	const apiYMaps = document.createElement('script')
+	apiYMaps.type = 'text/javascript'
+	apiYMaps.src = 'https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU'
+	const footer = document.querySelector('footer')
+	footer.after(apiYMaps)
 })
