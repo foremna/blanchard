@@ -30,7 +30,7 @@
 					</button>
 
 					<a href="" class="header__logotype">
-						<img loading="lazy" src="img/svg/logo.svg" width="173px" height="40px" alt="Логотип сайта Blanchard" class="header__logo">
+						<img src="img/svg/logo.svg" width="173px" height="40px" alt="Логотип сайта Blanchard" class="header__logo">
 					</a>
 
 					<nav class="header__nav" aria-label="Меню навигации по сайту">
@@ -64,7 +64,7 @@
 					</div>
 
 					<form class="search">
-						<button class="search__btn"></button>
+						<button class="search__btn" aria-label="Найти"></button>
 						<label class="search-container">
 							<input type="search" placeholder="Поиск по сайту">
 						</label>
@@ -161,7 +161,7 @@
 						<label class="search-container">
 							<input type="search" placeholder="Поиск по сайту">
 						</label>
-						<button class="btn-search"></button>
+						<button class="btn-search" aria-label="Найти"></button>
 					</form>
 				</div>
 			</div>
@@ -178,9 +178,9 @@
 							что реализация намеченных плановых заданий создаёт
 							предпосылки для новых предложений.
 						</p>
-						<button class="button button--primary">
+						<a href="#contacts" class="button button--primary">
 							<span>Подписаться на рассылку</span>
-						</button>
+						</a>
 					</div>
 				</div>
 				<div class="hero__slide hero__slide--slide1">
@@ -405,13 +405,12 @@
 				<div class="headline-and-tabs-buttons">
 					<h2 class="headline">Каталог</h2>
 
-					<div class="tabs-buttons" role="tablist" aria-label="Кнопки переключения языков">
-						<button class="tab-button language language--french" data-change-lang="french" role="tab"></button>
-						<button class="tab-button language language--germany" data-change-lang="germany" role="tab"></button>
-						<button class="tab-button language language--italy active" data-change-lang="italy" role="tab"></button>
-						<button class="tab-button language language--russian-federation" data-change-lang="russian-federation"
-							role="tab"></button>
-						<button class="tab-button language language--belgium" data-change-lang="belgium" role="tab"></button>
+					<div class="tabs-buttons" role="tablist" aria-label="Кнопки переключения художников по странам">
+						<button class="tab-button language language--french" data-change-lang="french" role="tab" aria-label="Французские художники"></button>
+						<button class="tab-button language language--germany" data-change-lang="germany" role="tab"  aria-label="Немецкие художники"></button>
+						<button class="tab-button language language--italy active" data-change-lang="italy" role="tab"  aria-label="Итальянские художники"></button>
+						<button class="tab-button language language--russian-federation" data-change-lang="russian-federation" role="tab"  aria-label="Российские художники"></button>
+						<button class="tab-button language language--belgium" data-change-lang="belgium" role="tab"  aria-label="Бельгийские художники"></button>
 					</div>
 				</div>
 
@@ -1534,10 +1533,10 @@
 									<span class="events__time">с 20 марта по 30 апреля</span>
 								</div>
 								<div class="events__content-wrapper">
-									<p class="events__title">Книжная гравюра в живом восприятии</p>
-									<span class="events__description">Один из ведущих флорентийских художников
+									<h5 class="events__title">Книжная гравюра в живом восприятии</h5>
+									<p class="events__description">Один из ведущих флорентийских художников
 										Кватроченто, основатель художественной династии, которую продолжили его брат
-										Давид и сын Ридольфо.</span>
+										Давид и сын Ридольфо.</p>
 									<a href="" class="events__link link link--secondary"><span>Подробнее</span></a>
 								</div>
 							</div>
@@ -1551,9 +1550,9 @@
 									<span class="events__time">24 марта 19:00</span>
 								</div>
 								<div class="events__content-wrapper">
-									<p class="events__title">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</p>
-									<span class="events__description">Высокий уровень вовлечения представителей целевой
-										аудитории является четким доказательством простого факта.</span>
+									<h5 class="events__title">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h5>
+									<p class="events__description">Высокий уровень вовлечения представителей целевой
+										аудитории является четким доказательством простого факта.</p>
 									<a href="" class="events__link link link--secondary"><span>Подробнее</span></a>
 								</div>
 							</div>
@@ -1567,9 +1566,9 @@
 									<span class="events__time">с 31 марта по 21 апреля</span>
 								</div>
 								<div class="events__content-wrapper">
-									<p class="events__title">Выставка «Формация 2020»</p>
-									<span class="events__description">Идейные соображения высшего порядка, а также современная методология
-										разработки играет важную роль в формировании глубокомысленных рассуждений.</span>
+									<h5 class="events__title">Выставка «Формация 2020»</h5>
+									<p class="events__description">Идейные соображения высшего порядка, а также современная методология
+										разработки играет важную роль в формировании глубокомысленных рассуждений.</p>
 									<a href="" class="events__link link link--secondary"><span>Подробнее</span></a>
 								</div>
 							</div>
@@ -1583,9 +1582,9 @@
 									<span class="events__time">с 30 марта по 30 апреля</span>
 								</div>
 								<div class="events__content-wrapper">
-									<p class="events__title">XXIV Международная биеннале молодого искусства</p>
-									<span class="events__description">Внезапно, реплицированные с зарубежных источников, современные
-										исследования.</span>
+									<h5 class="events__title">XXIV Международная биеннале молодого искусства</h5>
+									<p class="events__description">Внезапно, реплицированные с зарубежных источников, современные
+										исследования.</p>
 									<a href="" class="events__link link link--secondary"><span>Подробнее</span></a>
 								</div>
 							</div>
@@ -1599,9 +1598,9 @@
 									<span class="events__time">с 8 апреля по 20 мая</span>
 								</div>
 								<div class="events__content-wrapper">
-									<p class="events__title">Джон Винзор. Фотографии из серии «Метафора серебра»</p>
-									<span class="events__description">Один из ведущих флорентийских художников Кватроченто,
-										основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</span>
+									<h5 class="events__title">Джон Винзор. Фотографии из серии «Метафора серебра»</h5>
+									<p class="events__description">Один из ведущих флорентийских художников Кватроченто,
+										основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
 									<a href="" class="events__link link link--secondary"><span>Подробнее</span></a>
 								</div>
 							</div>
@@ -1680,7 +1679,7 @@
 										alt="Искусство цвета - Иттен, Иоханнес" class="editions__image"></div>
 								<div class="editions__content">
 									<div class="editions__title-and-author">
-										<p class="editions__title">Искусство цвета</p>
+										<h6 class="editions__title">Искусство цвета</h6>
 										<p class="editions__author">Иттен, Иоханнес</p>
 									</div>
 									<i class="editions__price">620 руб</i>
@@ -1692,7 +1691,7 @@
 										class="editions__image"></div>
 								<div class="editions__content">
 									<div class="editions__title-and-author">
-										<p class="editions__title">Типографика</p>
+										<h6 class="editions__title">Типографика</h6>
 										<p class="editions__author">Рудер, Эмиль</p>
 									</div>
 									<i class="editions__price">2 450 руб</i>
@@ -1704,7 +1703,7 @@
 										class="editions__image"></div>
 								<div class="editions__content">
 									<div class="editions__title-and-author">
-										<p class="editions__title">Книга про буквы</p>
+										<h6 class="editions__title">Книга про буквы</h6>
 										<p class="editions__author">Гордон, Юрий</p>
 									</div>
 									<i class="editions__price">2 200 руб</i>
@@ -1716,7 +1715,7 @@
 										alt="Николай Ильин - Кричевский, Владимир" class="editions__image"></div>
 								<div class="editions__content">
 									<div class="editions__title-and-author">
-										<p class="editions__title">Николай Ильин</p>
+										<h6 class="editions__title">Николай Ильин</h6>
 										<p class="editions__author">Кричевский, Владимир</p>
 									</div>
 									<i class="editions__price">1 100 руб</i>
@@ -1729,8 +1728,8 @@
 										class="editions__image"></div>
 								<div class="editions__content">
 									<div class="editions__title-and-author">
-										<p class="editions__title">Модульные сетки в графическом дизайне. Пособие для графиков, типографов и
-											оформителей выставок</p>
+										<h6 class="editions__title">Модульные сетки в графическом дизайне. Пособие для графиков, типографов и
+											оформителей выставок</h6>
 										<p class="editions__author">Мюллер-Брокманн, Йозеф</p>
 									</div>
 									<i class="editions__price">1 450 руб</i>
@@ -1743,7 +1742,7 @@
 										class="editions__image"></div>
 								<div class="editions__content">
 									<div class="editions__title-and-author">
-										<p class="editions__title">Эволюция графических стилей. От викторианской эпохи до хипстеров</p>
+										<h6 class="editions__title">Эволюция графических стилей. От викторианской эпохи до хипстеров</h6>
 										<p class="editions__author">Хеллер, Чваст</p>
 									</div>
 									<i class="editions__price">3 200 руб</i>
@@ -1755,7 +1754,7 @@
 										alt="Искусство и визуальное восприятие - Арнхейм, Рудольф" class="editions__image"></div>
 								<div class="editions__content">
 									<div class="editions__title-and-author">
-										<p class="editions__title">Искусство и визуальное восприятие</p>
+										<h6 class="editions__title">Искусство и визуальное восприятие</h6>
 										<p class="editions__author">Арнхейм, Рудольф</p>
 									</div>
 									<i class="editions__price">2 200 руб</i>
@@ -1816,23 +1815,24 @@
 					<button class="btn-arrow btn-arrow--prev btn-arrow--light" aria-label="Слайд назад"></button>
 					<div class="projects__inner swiper-container">
 						<div class="projects__sliders swiper-wrapper">
-							<a href="" class="projects__slide swiper-slide"><img loading="lazy" data-src="img/png/project-img1.png" alt=""
+							<a href="" class="projects__slide swiper-slide" aria-label="Freelands foundation">
+								<img loading="lazy" data-src="img/png/project-img1.png" alt="Freelands foundation"
 									class="projects__image"></a>
-							<a href="" class="projects__slide swiper-slide"><img loading="lazy" data-src="img/png/project-img2.png" alt=""
+							<a href="" class="projects__slide swiper-slide" aria-label="Institute for contemporary art"><img loading="lazy" data-src="img/png/project-img2.png" alt="Institute for contemporary art"
 									class="projects__image"></a>
-							<a href="" class="projects__slide swiper-slide"><img loading="lazy" data-src="img/png/project-img3.png" alt=""
+							<a href="" class="projects__slide swiper-slide" aria-label="Workhouse arts center"><img loading="lazy" data-src="img/png/project-img3.png" alt="Workhouse arts center"
 									class="projects__image"></a>
-							<a href="" class="projects__slide swiper-slide"><img loading="lazy" data-src="img/png/project-img4.png" alt=""
+							<a href="" class="projects__slide swiper-slide" aria-label="1849 wine co."><img loading="lazy" data-src="img/png/project-img4.png" alt="1849 wine co."
 									class="projects__image"></a>
-							<a href="" class="projects__slide swiper-slide"><img loading="lazy" data-src="img/png/project-img5.png" alt=""
+							<a href="" class="projects__slide swiper-slide" aria-label="HISCOX"><img loading="lazy" data-src="img/png/project-img5.png" alt="HISCOX"
 									class="projects__image"></a>
-							<a href="" class="projects__slide swiper-slide"><img loading="lazy" data-src="img/png/project-img6.png" alt=""
+							<a href="" class="projects__slide swiper-slide" aria-label="Camden arts centre"><img loading="lazy" data-src="img/png/project-img6.png" alt="Camden arts centre"
 									class="projects__image"></a>
-							<a href="" class="projects__slide swiper-slide"><img loading="lazy" data-src="img/png/project-img7.png" alt=""
+							<a href="" class="projects__slide swiper-slide" aria-label="Stassen premium cider"><img loading="lazy" data-src="img/png/project-img7.png" alt="Stassen premium cider"
 									class="projects__image"></a>
-							<a href="" class="projects__slide swiper-slide"><img loading="lazy" data-src="img/png/project-img8.png" alt=""
+							<a href="" class="projects__slide swiper-slide" aria-label="WATTS Gallery artists village"><img loading="lazy" data-src="img/png/project-img8.png" alt="WATTS Gallery artists village"
 									class="projects__image"></a>
-							<a href="" class="projects__slide swiper-slide"><img loading="lazy" data-src="img/png/project-img9.png" alt=""
+							<a href="" class="projects__slide swiper-slide" aria-label="ESAD ecole superieure cart et de design de valenciennes"><img loading="lazy" data-src="img/png/project-img9.png" alt="ESAD ecole superieure cart et de design de valenciennes"
 									class="projects__image"></a>
 						</div>
 					</div>
@@ -1911,17 +1911,17 @@
 					<img loading="lazy" data-src="img/svg/logo.svg" width="173px" height="40px" alt="Логотип сайта Blanchard" class="footer__logo">
 				</a>
 				<div class="footer__social-networks" tabindex="0">
-					<a href="" class="footer__social-network footer__social-network--vkontakte">
+					<a href="" class="footer__social-network footer__social-network--vkontakte" aria-label="Вконтакте">
 						<svg width="24" height="24" viewBox="0 0 24 24">
 							<use xlink:href="img/svg/sprites.svg#vkontakte"></use>
 						</svg>
 					</a>
-					<a href="" class="footer__social-network footer__social-network--instagram">
+					<a href="" class="footer__social-network footer__social-network--instagram" aria-label="Instagram">
 						<svg width="24" height="24" viewBox="0 0 24 24">
 							<use xlink:href="img/svg/sprites.svg#instagram"></use>
 						</svg>
 					</a>
-					<a href="" class="footer__social-network footer__social-network--facebook">
+					<a href="" class="footer__social-network footer__social-network--facebook" aria-label="Facebook">
 						<svg width="24" height="24" viewBox="0 0 24 24">
 							<use xlink:href="img/svg/sprites.svg#facebook"></use>
 						</svg>
@@ -1930,9 +1930,6 @@
 			</div>
 		</div>
 	</footer>
-
-	<!--  Yandex Maps-->
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
 
 	<!-- Path to simplebar -->
 	<script src="js/libs/simplebar.min.js"></script>
