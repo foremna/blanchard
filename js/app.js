@@ -292,6 +292,19 @@ for (const checkbox of editionsCheckboxes) {
 	})
 }
 
+// Aria-label for editions slider
+const editionsSliders = document.querySelectorAll('.editions__slide')
+
+editionsSliders.forEach(function (slide) {
+	const slideTitle = slide.querySelector('.editions__title')
+	const slideAuthor = slide.querySelector('.editions__author')
+	const slidePrice = slide.querySelector('.editions__price')
+	const slideBtn = slide.querySelector('.button')
+
+	const contentSlideForAria = 'Издание ' + slideTitle.textContent + ', автора ' + slideAuthor.textContent + ', по цене ' + slidePrice.textContent
+	slideBtn.setAttribute('aria-label', contentSlideForAria)
+})
+
 // Functional tooltips
 const tooltips = document.querySelectorAll('.tooltip__btn-tooltip')
 
