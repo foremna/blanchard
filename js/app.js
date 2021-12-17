@@ -301,6 +301,15 @@ for (const tooltip of tooltips) {
 	tooltip.setAttribute('aria-label', tooltipPathData)
 }
 
+// Paste aria-label of img in link
+const projectsImages = document.querySelectorAll('.projects__image')
+
+for (const img of projectsImages) {
+	let imgAttrAlt = img.getAttribute('alt')
+	let imgParent = img.parentElement
+	imgParent.setAttribute('aria-label', imgAttrAlt)
+}
+
 // Connect Yandex Maps for Tablet and up & lazy load YMaps
 let flagForDesktopYMaps = false
 function initYMapAtScroll () {
@@ -353,12 +362,12 @@ function initYMapAtScroll () {
 	}
 }
 
-window.addEventListener('scroll', function () {
+document.addEventListener('scroll', function () {
 	initYMapAtScroll()
 })
 
 // Connect Yandex Maps for mobile & lazy load YMaps
-let mqForYMap = window.matchMedia('(max-width: 640px)')
+let mqForYMap = window.matchMedia('(max-width: 740px)')
 let flagForMobileYMaps = false
 
 function initYMapMobileAtScroll () {
@@ -411,10 +420,13 @@ function initYMapMobileAtScroll () {
 	}
 }
 
-window.addEventListener('scroll', function () {
+document.addEventListener('scroll', function () {
 	initYMapMobileAtScroll()
 })
 
+document.addEventListener('resize', function () {
+	initYMapMobileAtScroll()
+})
 // Initialization inputmask
 let inputPhone = document.querySelector("input[type='tel']");
 let im = new Inputmask("+7(999) 999-99-99");
@@ -466,30 +478,38 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
 	})
 })
 
-const lazyImg = document.querySelectorAll('img')
+// LazyLoad images
+const lazyImg = document.querySelectorAll('img[loading="lazy"]')
 
 function lazyLoadImg () {
+	var lazyloadThrottleTimeout
+
+	if(lazyloadThrottleTimeout) {
+		clearTimeout(lazyloadThrottleTimeout)
+	}
+
 	let flag = false
 	let scrollY = window.scrollY
 
-	for (const img of lazyImg) {
+	lazyImg.forEach(function(img) {
 		let {top} = img.getBoundingClientRect()
 		let dataSrcLazyImg = img.dataset.src
 
 		if (scrollY >= top && !flag) {
 			img.src = dataSrcLazyImg
 		}
-	}
+	})
 }
 
-window.addEventListener('scroll', function () {
+document.addEventListener('scroll', function () {
 	lazyLoadImg()
 })
 
-setTimeout(function () {
-	var elem = document.createElement('script');
-	elem.type = 'text/javascript';
-	elem.src = 'https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU';
-	var div = document.querySelector('body');
-	div.after(elem);
-}, 4000);
+// Create api YMaps after load
+window.addEventListener('load', function () {
+	var elem = document.createElement('script')
+	elem.type = 'text/javascript'
+	elem.src = 'https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU'
+	var div = document.querySelector('footer')
+	div.after(elem)
+})
