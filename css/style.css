@@ -936,7 +936,7 @@ body {
   transition: .3s ease background-color, .3s ease box-shadow;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1199.98px) {
   .search-container input {
     background-color: var(--violet-dark);
   }
@@ -1199,6 +1199,15 @@ body {
 }
 
 @media screen and (max-width: 1440px) {
+  .header__logotype {
+    margin-right: 35px;
+  }
+  .header__item:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
   .header__top {
     padding: 35px 0;
   }
@@ -1280,9 +1289,9 @@ body {
     padding-right: 32px;
   }
   .header .tablet-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: -35px;
+    left: -50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1291,7 +1300,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 40px 48px 50px;
-    width: 100%;
+    width: calc(100% + 100px);
     background-color: rgba(var(--black), 0.9);
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
@@ -1365,7 +1374,6 @@ body {
   }
   .header .search__btn-reset {
     position: relative;
-    margin-left: 23px;
     width: 35px;
     height: 35px;
     border: none;
@@ -1402,6 +1410,7 @@ body {
     background-color: transparent;
   }
   .header .search.active .search-container {
+    margin-right: 0;
     width: 100%;
   }
   .header .search.active .search-container input {
@@ -1447,21 +1456,33 @@ body {
     height: 24px;
   }
   .header .search__btn-reset {
+    position: absolute;
+    top: 41px;
+    right: 13px;
     width: 20px;
     height: 20px;
   }
   .header .search.active {
-    padding: 0 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    padding: 0 15px 18px;
     width: calc(100% + 30px);
     left: -15px;
     background-color: rgba(var(--black), 0.9);
   }
   .header .search.active .search__btn {
     margin-top: 52px;
-    margin-left: 44px;
+    margin-left: 42px;
     padding-right: 0;
-    width: 18px;
-    height: 24px;
+    width: 22px;
+    height: 16px;
+  }
+  .header .search.active .search-container {
+    margin-right: 18px;
   }
   .header .search .search-container {
     margin-top: 30px;
@@ -1469,6 +1490,9 @@ body {
   }
   .header .tablet-nav {
     padding: 0 15px 25px;
+    top: -9px;
+    left: -15px;
+    width: calc(100% + 30px);
   }
   .header .tablet-nav .header__nav {
     margin: 45px 0 18px 0;
@@ -1498,12 +1522,6 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 5;
-}
-
-@media screen and (max-width: 1440px) {
-  .header-arts {
-    display: none;
-  }
 }
 
 .header-arts__wrapper {
@@ -1780,6 +1798,18 @@ body {
 
 .header-arts__dropdown-link--balla {
   background-image: url("../img/png/subitem20.png");
+}
+
+@media screen and (max-width: 1440px) {
+  .header-arts__item:not(:last-child) {
+    margin-right: 45px;
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  .header-arts {
+    display: none;
+  }
 }
 
 .hero {
@@ -2103,6 +2133,7 @@ body {
 
 .gallery__slide img {
   width: 100%;
+  height: 100%;
 }
 
 .gallery__slide:before {
@@ -3466,10 +3497,9 @@ body {
   }
   .editions__filter-paragraph--line {
     position: relative;
-    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 -1px 0 0 rgba(255, 255, 255, 0.5);
-            box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 -1px 0 0 rgba(255, 255, 255, 0.5);
   }
-  .editions__filter-paragraph--line:before {
+  b
+.editions__filter-paragraph--line:before {
     content: '';
     position: absolute;
     top: 50%;
@@ -3500,8 +3530,7 @@ body {
     margin: 0;
     padding-bottom: 8px;
     width: 100%;
-    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5);
-            box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
   .editions .checkbox-container.hide {
     display: none;
@@ -3802,6 +3831,12 @@ body {
 
 .contacts__mobile {
   display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .contacts__wrapper {
+    width: 45%;
+  }
 }
 
 @media screen and (max-width: 1440px) {

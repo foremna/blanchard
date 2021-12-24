@@ -19,7 +19,7 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
   },
   spaceBetween: 15,
   breakpoints:{
-    641:{
+    741:{
       slidesPerView: 2,
       slidesPerGroup: 2,
       grid: {
