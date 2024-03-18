@@ -531,3 +531,18 @@ window.addEventListener('load', function () {
 	const footer = document.querySelector('footer')
 	footer.after(apiYMaps)
 })
+
+let gallery = document.querySelector('.gallery__sliders--mobile')
+let matchM = window.matchMedia('(max-width: 741px)')
+
+window.addEventListener('load', function () {
+	if (matchM.matches) {
+		gallery.classList.add("gallery__sliders", "swiper-wrapper")
+	}
+})
+
+window.addEventListener('resize', function () {
+	if (matchM.matches) {
+		gallery.classList.add("gallery__sliders", "swiper-wrapper")
+	}
+})

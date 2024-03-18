@@ -39,6 +39,28 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
   }
 })
 
+// Gallery swiper slider for mobile
+const gallerySwiperMobile = new Swiper('.gallery__slider-inner-mobile', {
+  pagination: {
+    el: '.counter',
+    type: 'fraction',
+  },
+  navigation: {
+    nextEl: '.btn-arrow--next',
+    prevEl: '.btn-arrow--prev',
+  },
+  a11y: {
+    // notificationClass: 'swiper-notification',
+  },
+  keyboardControl: true,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  grid: {
+    rows: 1,
+  },
+  spaceBetween: 15,
+})
+
 // Events swiper slider
 const eventsInner = document.querySelector('.events__inner')
 

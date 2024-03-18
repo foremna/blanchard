@@ -2183,12 +2183,14 @@ body {
       }
     }
 
-    &__slider-inner {
+    &__slider-inner,
+    &__slider-inner-mobile {
       display: flex;
       flex-direction: column-reverse;
       padding-top: 22px;
       margin: 18px auto 18px auto;
       width: 290px;
+      overflow: hidden;
     }
 
     .btn-and-counter {
@@ -2213,6 +2215,22 @@ body {
         width: unset;
         height: 100%;
         object-position: -35px 0;
+      }
+    }
+
+    &__slider {
+      &-inner {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: 741px) {
+    &__slider {
+      &-inner {
+        &-mobile {
+          display: none;
+        }
       }
     }
   }

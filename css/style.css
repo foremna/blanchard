@@ -1833,12 +1833,13 @@ body {
   .gallery .choices:last-child {
     display: block;
   }
-  .gallery__slider-inner {
+  .gallery__slider-inner, .gallery__slider-inner-mobile {
     display: flex;
     flex-direction: column-reverse;
     padding-top: 22px;
     margin: 18px auto 18px auto;
     width: 290px;
+    overflow: hidden;
   }
   .gallery .btn-and-counter {
     justify-content: center;
@@ -1860,6 +1861,14 @@ body {
     height: 100%;
     -o-object-position: -35px 0;
        object-position: -35px 0;
+  }
+  .gallery__slider-inner {
+    display: none;
+  }
+}
+@media screen and (min-width: 741px) {
+  .gallery__slider-inner-mobile {
+    display: none;
   }
 }
 
