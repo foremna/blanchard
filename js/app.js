@@ -1,8 +1,8 @@
 /*
 --> Disclaimer: some functional it could seem stranged, 
-    but this project requires technologies Pixel Perfect, 
-    therefore some places in the code may seem bad..
-    This not i, this all Pixel Perfect :с
+		but this project requires technologies Pixel Perfect, 
+		therefore some places in the code may seem bad..
+		This not i, this all Pixel Perfect :с
 */
 
 const itemsArts = document.querySelectorAll('.header-arts__item')
@@ -325,10 +325,10 @@ for (const img of projectsImages) {
 
 // Connect Yandex Maps for Tablet and up & lazy load YMaps
 let flagForDesktopYMaps = false
-function initYMapAtScroll () {
+function initYMapAtScroll() {
 	let scrollY = window.scrollY
 	let map = document.querySelector('.map')
-	let {top} = map.getBoundingClientRect()
+	let { top } = map.getBoundingClientRect()
 
 	if (scrollY >= top - 500 && !flagForDesktopYMaps) {
 		ymaps.ready(init);
@@ -339,16 +339,16 @@ function initYMapAtScroll () {
 				controls: [],
 				zoom: 15
 			});
-		
+
 			var myPlacemark = new ymaps.Placemark([55.75, 37.60], {}, {
 				iconLayout: 'default#image',
 				iconImageHref: 'img/svg/location-pin.svg',
 				iconImageSize: [20, 20],
 				iconImageOffset: [-3, -42]
 			});
-		
+
 			myMap.geoObjects.add(myPlacemark);
-		
+
 			var zoomControl = new ymaps.control.ZoomControl({
 				options: {
 					size: "small",
@@ -359,7 +359,7 @@ function initYMapAtScroll () {
 				}
 			});
 			myMap.controls.add(zoomControl);
-		
+
 			var geolocationControl = new ymaps.control.GeolocationControl({
 				options: {
 					position: {
@@ -368,7 +368,7 @@ function initYMapAtScroll () {
 					}
 				}
 			});
-		
+
 			myMap.controls.add(geolocationControl);
 		}
 		flagForDesktopYMaps = true
@@ -383,10 +383,10 @@ document.addEventListener('scroll', function () {
 let mqForYMap = window.matchMedia('(max-width: 740px)')
 let flagForMobileYMaps = false
 
-function initYMapMobileAtScroll () {
+function initYMapMobileAtScroll() {
 	let scrollY = window.scrollY
 	let map = document.querySelector('.map-mobile')
-	let {top} = map.getBoundingClientRect()
+	let { top } = map.getBoundingClientRect()
 
 	if (scrollY >= top - 500 && !flagForMobileYMaps && mqForYMap.matches) {
 		ymaps.ready(init);
@@ -494,18 +494,18 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
 // LazyLoad images
 const lazyImg = document.querySelectorAll('img[loading="lazy"]')
 
-function lazyLoadImg () {
+function lazyLoadImg() {
 	var lazyloadThrottleTimeout
 
-	if(lazyloadThrottleTimeout) {
+	if (lazyloadThrottleTimeout) {
 		clearTimeout(lazyloadThrottleTimeout)
 	}
 
 	let flag = false
 	let scrollY = window.scrollY
 
-	lazyImg.forEach(function(img) {
-		let {top} = img.getBoundingClientRect()
+	lazyImg.forEach(function (img) {
+		let { top } = img.getBoundingClientRect()
 		let dataSrcLazyImg = img.dataset.src
 
 		if (scrollY >= top && !flag) {
@@ -543,4 +543,19 @@ window.addEventListener('load', function () {
 	apiYMaps.src = 'https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU'
 	const footer = document.querySelector('footer')
 	footer.after(apiYMaps)
+})
+
+let gallery = document.querySelector('.gallery__sliders--mobile')
+let matchM = window.matchMedia('(max-width: 741px)')
+
+window.addEventListener('load', function () {
+	if (matchM.matches) {
+		gallery.classList.add("gallery__sliders", "swiper-wrapper")
+	}
+})
+
+window.addEventListener('resize', function () {
+	if (matchM.matches) {
+		gallery.classList.add("gallery__sliders", "swiper-wrapper")
+	}
 })

@@ -18,8 +18,8 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
     rows: 1,
   },
   spaceBetween: 15,
-  breakpoints:{
-    741:{
+  breakpoints: {
+    741: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       grid: {
@@ -28,7 +28,7 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
       spaceBetween: 30,
     },
 
-    1441:{
+    1441: {
       slidesPerView: 3,
       slidesPerGroup: 3,
       grid: {
@@ -39,25 +39,48 @@ const gallerySwiper = new Swiper('.gallery__slider-inner', {
   }
 })
 
+// Gallery swiper slider for mobile
+const gallerySwiperMobile = new Swiper('.gallery__slider-inner-mobile', {
+  pagination: {
+    el: '.counter',
+    type: 'fraction',
+  },
+  navigation: {
+    nextEl: '.btn-arrow--next',
+    prevEl: '.btn-arrow--prev',
+  },
+  a11y: {
+    // notificationClass: 'swiper-notification',
+  },
+  keyboardControl: true,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  grid: {
+    rows: 1,
+  },
+  spaceBetween: 15,
+})
+
 // Events swiper slider
 const eventsInner = document.querySelector('.events__inner')
 
 let eventsSwiper;
 
-function sliderCatalog () {
+function sliderCatalog() {
   if (window.innerWidth <= 740 && eventsInner.dataset.mobile == 'false') {
     eventsSwiper = new Swiper(eventsInner, {
       pagination: {
         el: '.swiper-pagination',
+        clickable: true,
       },
       slidesPerView: 1,
       spaceBetween: 50
     })
 
-		eventsInner.dataset.mobile = 'true'
+    eventsInner.dataset.mobile = 'true'
   }
 
-	if (window.innerWidth > 740) {
+  if (window.innerWidth > 740) {
     eventsInner.dataset.mobile = 'false'
     if (eventsInner.classList.contains('swiper-container-initialized')) {
       eventsSwiper.destroy()
@@ -78,7 +101,7 @@ const editionsInner = document.querySelector('.editions__inner')
 
 let editionsSwiper;
 
-function sliderEditions () {
+function sliderEditions() {
   if (window.innerWidth >= 740 && editionsInner.dataset.mobile == 'false') {
     editionsSwiper = new Swiper(editionsInner, {
       pagination: {
@@ -95,18 +118,18 @@ function sliderEditions () {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 50,
-      breakpoints:{
-        640:{
+      breakpoints: {
+        640: {
           slidesPerView: 2,
           slidesPerGroup: 2,
           spaceBetween: 37,
         },
-        920:{
+        920: {
           slidesPerView: 2,
           slidesPerGroup: 2,
           spaceBetween: 50,
         },
-        1440:{
+        1440: {
           slidesPerView: 3,
           slidesPerGroup: 3,
           spaceBetween: 50,
@@ -115,7 +138,7 @@ function sliderEditions () {
     })
   }
 
-	if (window.innerWidth < 740) {
+  if (window.innerWidth < 740) {
     editionsInner.dataset.mobile = 'false'
     if (editionsInner.classList.contains('swiper-container-initialized')) {
       editionsSwiper.destroy()
@@ -143,18 +166,18 @@ const projectsSwiper = new Swiper('.projects__inner', {
   keyboardControl: true,
   slidesPerView: 1,
   slidesPerGroup: 1,
-  breakpoints:{
-    640:{
+  breakpoints: {
+    640: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 30,
     },
-    920:{
+    920: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 50,
     },
-    1441:{
+    1441: {
       slidesPerView: 3,
       slidesPerGroup: 3,
       spaceBetween: 50,
