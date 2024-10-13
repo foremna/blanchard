@@ -39,4 +39,4 @@ For Blanchard, a company specializing in the sale of art objects, I developed a 
 
 ## Conclusion
 
-The Blanchard project exemplifies my commitment to delivering high-quality solutions for projects of any complexity. By focusing on responsive design, pixel-perfect execution, and adherence to coding standards, Blanchard ensures an optimal user experience and accessibility across all devices and screen sizes. This project reflects my attention to detail and dedication to creating seamless, accessible, and visually appealing websites that perform flawlessly in diverse environments.
+The **Blanchard** project exemplifies my commitment to delivering high-quality solutions for projects of any complexity. By focusing on responsive design, pixel-perfect execution, and adherence to coding standards, **Blanchard** ensures an optimal user experience and accessibility across all devices and screen sizes. This project reflects my attention to detail and dedication to creating seamless, accessible, and visually appealing websites that perform flawlessly in diverse environments.
