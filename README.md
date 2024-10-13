@@ -20,7 +20,7 @@ For Blanchard, a company specializing in the sale of art objects, I developed a 
 
 ## Project Features
 
-- The development was closely integrated with the Swiper library, which was used to create sliders. I customized the library for various types of sliders, adapting them for all screen resolutions while maintaining accessibility (A11y). This allowed users to seamlessly navigate the site on both mobile devices and desktops.
+- I integrated the Swiper library into the project, customizing it for various types of sliders while ensuring accessibility (A11y) and interactivity. I also implemented interactive tabs and accordions using JavaScript, complemented by smooth animations.
 
 - The website smoothly transitions during resizing without abrupt changes at breakpoints.
 
