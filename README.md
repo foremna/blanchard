@@ -5,7 +5,7 @@ For Blanchard, a company specializing in the sale of art objects, I developed a 
 ## General Technical Requirements
 
 - **Responsive and semantic markup:** The code was optimized to minimize the number of tags and nesting, ensuring a clean and lightweight structure.
-- 
+
 - **Pixel-perfect across all resolutions:** It was important to achieve maximum layout precision, with deviations no greater than 1-3 pixels, ensuring all elements looked flawless on any device.
 
 - **Cross-browser compatibility:** The landing page was thoroughly tested and fine-tuned to display perfectly across all modern browsers — **Chrome**, **Firefox**, **Safari**, **Opera**, and **Edge** — providing users with a consistent experience regardless of platform.
